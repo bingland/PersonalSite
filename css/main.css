@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "BungeeRegular";
+  src: url("../fonts/bungee-regular-webfont.woff") format("woff"), url("../fonts/bungee-regular-webfont.ttf") format("truetype"); }
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/roboto-regular-webfont.woff") format("woff"), url("../fonts/roboto-regular-webfont.ttf") format("truetype"); }
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+* {
+  color: #525252; }
+
+h1 {
+  font-family: "BungeeRegular";
+  font-size: 80px;
+  padding: 25px; }
+
+a {
+  text-decoration: none; }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+#navbar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 125px;
+  overflow: hidden;
+  background: white;
+  font-family: "BungeeRegular";
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2); }
+  #navbar ul {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 230px);
+    grid-template-rows: 125px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    #navbar ul #logo {
+      width: 100%;
+      max-height: 115px;
+      padding: 5px;
+      margin: 0 auto; }
+    #navbar ul li {
+      font-size: 40px; }
+      #navbar ul li a:hover {
+        color: #126AB3;
+        text-decoration: underline; }
+
+#welcome-section {
+  background-color: #58B4FF;
+  height: 100vh;
+  text-align: center; }
+  #welcome-section h1 {
+    display: none; }
+  #welcome-section #welcomeGrid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+    #welcome-section #welcomeGrid #welcomeContainer {
+      width: 100%;
+      height: calc(100vh - 125px);
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      padding-top: 125px; }
+      #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+        width: 100%;
+        padding: 20px;
+        max-width: 1000px; }
+
+#aboutMe {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 20px;
+  align-items: center; }
+  #aboutMe #aboutMeText h1 {
+    font-family: "BungeeRegular";
+    font-size: 80px;
+    padding: 25px;
+    color: #126AB3; }
+  #aboutMe #aboutMeText p {
+    font-family: "RobotoRegular";
+    font-size: 40px;
+    line-height: 1.6; }
+  #aboutMe img {
+    width: 100%;
+    float: right;
+    padding: 20px; }
+
+#projects {
+  margin-top: 150px; }
+  #projects h1 {
+    color: #FF7974;
+    padding-bottom: 50px; }
+  #projects #projectTiles {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr; }
+  #projects a .project-tile {
+    border: 1px solid #525252;
+    border-radius: 26px;
+    width: 384px;
+    height: 384px;
+    padding: 26px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    box-shadow: 10px 10px #FF7974; }
+    #projects a .project-tile .projectText .projectTitle {
+      font-family: "BungeeRegular";
+      font-size: 40px;
+      line-height: 1.2;
+      padding-bottom: 10px; }
+    #projects a .project-tile .projectText .projectDesc {
+      font-family: "RobotoRegular";
+      font-size: 26px;
+      line-height: 1.33; }
+
+#githubLink {
+  font-size: 60px;
+  font-family: "BungeeRegular";
+  text-align: center;
+  line-height: 1.5;
+  padding: 150px 0; }
+  #githubLink #profile-link {
+    color: #C6CC33; }
+  #githubLink #profile-link:hover {
+    color: #AEB336;
+    text-decoration: underline; }
+
+footer {
+  width: 100%;
+  height: 140px;
+  background-color: #525252; }
+  footer h3 {
+    color: #EAEAEA;
+    font-size: 25px;
+    font-family: "RobotoRegular";
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+/*# sourceMappingURL=main.css.map */
