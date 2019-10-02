@@ -58,7 +58,7 @@ a {
     ul {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(5, 230px);
+        grid-template-columns: 230px 230px 180px 160px 300px;
         grid-template-rows: 125px;
         justify-content: center;
         align-items: center;
@@ -76,6 +76,29 @@ a {
                 color: $darkblue;
                 text-decoration: underline;
             }
+        }
+    }
+}
+//navbar media query
+@media only screen and (max-width: 1300px) {
+    #navbar ul {
+        grid-template-columns: 20fr 20fr 150px 13fr 27fr;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #navbar ul {
+        grid-template-columns: 200px 200px 180px 130px 270px;
+        grid-template-columns: 20fr 20fr 150px 13fr 27fr;
+        li {
+            font-size: 35px;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    #navbar ul {
+        grid-template-columns: 1fr;
+        li {
+            display: none;
         }
     }
 }
@@ -106,22 +129,29 @@ a {
 
             #welcomeText {
                 width: 100%;
+                height: 100%;
                 padding: 20px;
                 max-width: 1000px;
             }
         }
     }
 }
+//welcome section media quieries
+@media only screen and (max-height: 800px) {
+    
+}
+
 
 //about me
 #aboutMe {
     margin-top: 100px;
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-gap: 20px;
     align-items: center;
+    box-sizing: border-box;
 
     #aboutMeText {
+        padding-left: 20px;
         h1 {
             font-family: "BungeeRegular";
             font-size: 80px;
@@ -131,13 +161,63 @@ a {
         p {
             font-family: "RobotoRegular";
             font-size: 40px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
     }
     img {
         width: 100%;
-        float: right;
+        box-sizing: border-box;
         padding: 20px;
+    }
+}
+//about me media queries
+@media only screen and (max-width: 1150px) {
+    #aboutMe {
+        #aboutMeText {
+            h1 {
+                font-size: 60px;
+            }
+            p {
+                font-size: 35px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 940px) {
+    #aboutMe {
+        grid-template-columns: 1fr 1fr;
+        #aboutMeText {
+            h1 {
+                font-size: 55px;
+                text-align: center;
+            }
+            p {
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 750px) {
+    #aboutMe {
+        grid-template-columns: 1fr;
+
+        img {
+            width: 50%;
+            min-width: 300px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        #aboutMeText {
+            h1 {
+                font-size: 55px;
+                text-align: center;
+            }
+            p {
+                font-size: 30px;
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -183,6 +263,40 @@ a {
         }
     }
 }
+//projects media queries
+@media only screen and (max-width: 1300px) {
+    #projects {
+        padding-left: 20px;
+
+        h1 {
+            text-align: center;
+        }
+        #projectTiles {
+            justify-items: center;
+            grid-template-columns: 385px 385px;
+        }
+    }
+}
+@media only screen and (max-width: 840px) {
+    #projects {
+        h1 {
+            text-align: center;
+        }
+        #projectTiles {
+            justify-items: center;
+            grid-template-columns: 1fr;
+        }
+    }
+    
+}
+@media only screen and (max-width: 750px) {
+    #projects {
+        h1 {
+            font-size: 55px;
+        }
+    }
+}
+
 
 #githubLink {
     font-size: 60px;
