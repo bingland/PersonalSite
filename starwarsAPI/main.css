@@ -1,0 +1,70 @@
+* { 
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+  
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* navigation */
+form {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: lightgoldenrodyellow;
+    flex-wrap: wrap;
+    line-height: 1.3;
+}
+form div {
+    padding: 5px;
+    border: 1px dashed grey;
+    width: 16.66%;
+}
+.mainSearchDiv {
+    width: 100%;
+    padding: 5px;
+}
+#mainSearch {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+label {
+    font-weight: bold;
+    
+}
+.fromTo {
+    width: 50px;
+}
+
+
+/* content that js outputs */
+.content {
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.infoCard {
+    background-color: pink;
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.planetHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.planetText {
+    line-height: 1.05;
+}
