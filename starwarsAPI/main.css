@@ -7,19 +7,48 @@
     display: table;
     clear: both;
 }
+body {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    background-image: url("assets/background.jpg");
+    color: #0D0D0D;
+}
+
+/* star wars font */
+@font-face {
+    font-family: "StarWars";
+    src: url("fonts/starwarsFont.TTF") format("truetype"),
+    url("fonts/starwarsFont.woff") format("woff");
+}
+/* roboto fonts */
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/roboto-regular-webfont.ttf") format("truetype"),
+    url("fonts/roboto-regular-webfont.woff") format("woff");
+}
+@font-face {
+    font-family: "RobotoItalic";
+    src: url("fonts/Roboto-RegularItalic.ttf") format("truetype"),
+    url("fonts/roboto-regularitalic-webfont.woff") format("woff");
+}
+@font-face {
+    font-family: "RobotoBold";
+    src: url("fonts/Roboto-Bold.ttf") format("truetype"),
+    url("fonts/roboto-bold-webfont.woff") format("woff");
+}
 
 /* navigation */
 form {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 5px;
     background: lightgoldenrodyellow;
     flex-wrap: wrap;
     line-height: 1.3;
+    border-radius: 0 0 15px 15px;
 }
 form div {
     padding: 5px;
-    border: 1px dashed grey;
     width: 16.66%;
 }
 .mainSearchDiv {
@@ -35,7 +64,7 @@ form div {
 }
 label {
     font-weight: bold;
-    
+    font-family: "RobotoBold";
 }
 .fromTo {
     width: 50px;
@@ -50,21 +79,23 @@ label {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    grid-gap: 20px;
 }
 
 .infoCard {
-    background-color: pink;
+    background: rgba(244,233,78, 0.9);
     padding: 15px;
-    border: 1px solid grey;
     border-radius: 20px;
+    box-shadow: 10px 10px #736E25;
 }
 
 .planetHeader {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
+    font-family: "StarWars";
+    text-align: center;
 }
 .planetText {
-    line-height: 1.05;
+    line-height: 1.1;
 }
