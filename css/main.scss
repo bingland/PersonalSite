@@ -235,7 +235,7 @@ a {
         grid-gap: 24px;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    a {
+    a { 
         .project-tile {
             border: 1px solid $grey;
             border-radius: 26px;
@@ -245,7 +245,7 @@ a {
             display: grid;
             grid-template-columns: 1fr;
             align-items: end;
-            box-shadow: 10px 10px #FF7974;
+            box-shadow: 10px 10px $pink;
 
             .projectText {
                 .projectTitle {
