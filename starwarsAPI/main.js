@@ -5,8 +5,7 @@ const outArea = document.querySelector('.content')
 const submitButton = document.querySelector('#submitButton')
 
 //form values
-var searchTerm, populationFrom, populationTo, climate, orbitalPeriodFrom, orbitalPeriodTo, gravityFrom, gravityTo, rotationFrom, rotationTo, surfaceWaterFrom, surfaceWaterTo
-var climateInit = document.querySelector('#climates') // must be initialized early
+var searchTerm, populationFrom, populationTo, climate, climateInit, orbitalPeriodFrom, orbitalPeriodTo, gravityFrom, gravityTo, rotationFrom, rotationTo, surfaceWaterFrom, surfaceWaterTo
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
@@ -15,7 +14,8 @@ submitButton.addEventListener('click', (e) => {
     searchTerm = document.querySelector('#mainSearch').value.toLowerCase()
     populationFrom = document.querySelector('#populationFrom').value.toLowerCase()
     populationTo = document.querySelector('#populationTo').value.toLowerCase()
-    climate = climateInit.options[climateInit.selectedIndex].value
+    climateInit = document.querySelector('#climates')
+    climate = climateInit.options[climateInit.selectedIndex].value.toLowerCase()
     orbitalPeriodFrom = document.querySelector('#orbitalPeriodFrom').value.toLowerCase()
     orbitalPeriodTo = document.querySelector('#orbitalPeriodTo').value.toLowerCase()
     gravityFrom = document.querySelector('#gravityFrom').value.toLowerCase()
@@ -66,22 +66,18 @@ function init () {
         }
     }
     //climate
-    /*
-
-
-
-
-
-
-    FIX ME!
-
-
-
-
-
-    
-
-    */
+    if (climate != undefined) {
+        if (climate !== '') {
+            cards = cards.filter((card, index) => {
+                console.log(planets[index].climate)
+                if (planets[index].climate.toLowerCase().includes(climate)) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+        }
+    }
         
     //orbital period
     if (orbitalPeriodFrom != undefined && orbitalPeriodTo != undefined) {

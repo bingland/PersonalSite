@@ -10,12 +10,18 @@
 </head>
 <body>
     <header>
-        <form>
+        <form autocomplete="off">
             <div class="mainSearchDiv">
                 <!-- main search for names / possibly other features -->
-                <label for="mainSearch">Search for planets in the Star Wars Universe:</label><br>
-                <input type="text" id="mainSearch" name="mainSearch">
-                <input type="submit" id="submitButton" name="submitButton">
+                <div id="searchTitle">Search for Star Wars planets</div><br>
+                <div class="searchBar">
+                    <div class="searchDiv">
+                        <input type="text" id="mainSearch" name="mainSearch" placeholder="Enter a Planet's Name...">
+                    </div>
+                    <div class="sumbitDiv">
+                        <input type="submit" id="submitButton" name="submitButton">
+                    </div>
+                </div>
             </div>
             <div>
                 <!-- population -->
@@ -29,6 +35,7 @@
                 <!-- climate -->
                 <label for="climate">Climate:</label><br>
                 <select name="climates" id="climates">
+                    <option></option>
                     <option value="temperate">Temperate</option>
                     <option value="tropical">Tropical</option>
                     <option value="frozen">Frozen</option>
@@ -36,7 +43,7 @@
                     <option value="arid">Arid</option>
                     <option value="windy">Windy</option>
                     <option value="hot">Hot</option>
-                    <option value="artifical">Artifical</option>
+                    <option value="artifical">artificial</option>
                     <option value="frigid">Frigid</option>
                     <option value="humid">Humid</option>
                     <option value="moist">Moist</option>
@@ -83,7 +90,7 @@
         </form>
     </header>
 
-    <!-- area where the javascript outputs the planets -->
+    <!-- javascript output area -->
     <div class="content"></div>
 
     <script type="module" src="main.js"></script>
