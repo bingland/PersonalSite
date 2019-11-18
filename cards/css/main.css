@@ -1,0 +1,24 @@
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.output {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+}
+
+.person {
+    border: 1px solid black;
+}
+.person img {
+    width: 100%;
+}
+.person p {
+    padding: 5px;
+}
+.personName {
+    font-weight: bold;
+}
