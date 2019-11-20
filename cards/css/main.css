@@ -1,6 +1,23 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background: #41996E;
+    color: #181818;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 h1 {
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
+    padding: 10px;
+
 }
 
 .output {
@@ -8,27 +25,44 @@ h1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
-    margin: 0 auto;
-    max-width: 1200px;
+}
+@media only screen and (max-width: 1050px) {
+    .output { grid-template-columns: repeat(5, 1fr); }
+}
+@media only screen and (max-width: 850px) {
+    .output { grid-template-columns: repeat(4, 1fr); }
+}
+@media only screen and (max-width: 650px) {
+    .output { grid-template-columns: repeat(3, 1fr); }
+}
+@media only screen and (max-width: 550px) {
+    .output { grid-template-columns: repeat(2, 1fr); }
+}
+@media only screen and (max-width: 320px) {
+    .output { grid-template-columns: repeat(1, 1fr); }
 }
 
 .person {
-    border: 1px solid black;
+    
 }
 
 .scene {
     width: 100%;
-    height: 260px;
+    height: 100%;
     perspective: 600px;
 }
 
 .card {
     width: 100%;
-    height: 100%;
+    height: 200px;
     transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    border: 2px solid #181818;
+}
+.card:hover {
+    border: 2px solid #CC4193;
 }
 
 .card.is-flipped {
@@ -39,28 +73,33 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    line-height: 260px;
-    color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 20px;
+    line-height: 1.5;
     backface-visibility: hidden;
+    overflow: hidden;
 }
 
 .card__face--front {
-    background: red;
+    
+
+}
+
+.card__face--front img {
+    height: 100%;
 }
 
 .card__face--back {
-    background: blue;
     transform: rotateY(180deg);
+    background-color: #D1FBFF;
+    padding-top: 8px;
 }
 
 .person img {
-    width: 100%;
+    margin-left: -50px;
 }
 .person p {
-    padding: 5px;
 }
 .personName {
     font-weight: bold;
