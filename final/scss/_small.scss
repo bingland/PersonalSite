@@ -5,7 +5,7 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 }
 
 body {
-  //font
+  font-family: 'Raleway', sans-serif;
 }
 
 .clearfix:after {
@@ -19,12 +19,89 @@ body {
   margin: 0 auto;
 }
 
-.app {
+$blue: #03588C;
+$grey: #A7A9AC;
+
+header {
+  text-align: right;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  .card {
-    padding: 10px;
-    border: 1px solid grey;
+  grid-template-columns: 700px auto;
+
+  img {
+    width: 100%;
+  }
+  h1 {
+    padding: 20px;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 }
 
+.app {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 300px;
+  
+}
+
+
+// card flip css
+.scene {
+  width: 100%s;
+  height: 100%;
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  padding: 5px;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    padding: 5px;
+    text-transform: uppercase;
+    color: $blue;
+  }
+  h2 {
+    font-size: 20px;
+    padding: 5px;
+  }
+  p {
+    font-size: 15px;
+    padding: 5px;
+  }
+  h3 {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+.card__face--front {
+  border: 1px solid $grey;
+
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+  border: 1px solid $grey;
+}
