@@ -1,8 +1,6 @@
 const url = "https://api.spacexdata.com/v3/"
 const app = document.querySelector('.app')
 
-console.log('running....')
-
 function Card (flight_number, mission_name, details, rocket, launch_date_unix, links, video_link, launch_success) {
     this.flight_number = flight_number
     this.mission_name = mission_name
@@ -14,23 +12,18 @@ function Card (flight_number, mission_name, details, rocket, launch_date_unix, l
     this.launch_success = launch_success
 }
 
+// global variables
 let cards = []
+let links = []
+let descriptions = []
+let successes = []
+let dates = []
 
+// initiate API search
 const getData = () => {
     fetch(url + 'launches/past')
     .then((res) => res.json())
     .then((data) => {
-        /*
-        console.log(data)
-        console.log(data[1].mission_name)
-        console.log(data[1].details)
-        console.log(data[1].rocket)
-        console.log(data[1].rocket.rocket_name)
-        console.log(data[1].launch_date_unix)
-        console.log(data[1].links)
-        console.log(data[1].links.video_link)
-        console.log(data[1].launch_success)
-        */
 
         data.forEach((element) => {
             cards.push(new Card(element.flight_number, element.mission_name, element.details, element.rocket, element.launch_date_unix, element.links, element.links.video_link, element.launch_success))
@@ -46,6 +39,7 @@ const update = () => {
     const output = convertToHtml(cards)
     app.innerHTML = output
     addAnimation()
+    styleElements()
 }
 
 const convertToHtml = (obj) => {
@@ -53,7 +47,7 @@ const convertToHtml = (obj) => {
     let temp = ''
 
     // convert from unix timecode to english
-    let dates = obj.map(element => {
+    dates = obj.map(element => {
         let unixDate = new Date(element.launch_date_unix * 1000)
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
         let year = unixDate.getFullYear()
@@ -61,23 +55,38 @@ const convertToHtml = (obj) => {
         let date = unixDate.getDate()
         let hour = unixDate.getHours()
         let min = unixDate.getMinutes()
-        let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min
+        let time = date + ' ' + month + ' ' + year
         return time
     })
     
     //modify links to work in the iframe
-    let links = obj.map(element => {
-        let url = element.links.video_link.replace("watch?v=", "embed/")
+    links = obj.map(element => {
+        let url;
+        if (element.links.video_link.includes('youtube.com')) {
+            url = element.links.video_link.replace("watch?v=", "embed/")
+        } else if (element.links.video_link.includes('youtu.be')) {
+            url = element.links.video_link.replace('youtu.be/', 'youtube.com/embed/')
+        }
+        
+
         return url
     })
 
     //modify launch success values
-    let successes = obj.map(element => {
+    successes = obj.map(element => {
         if (element.launch_success) {
             return 'Successful Launch'
         } else {
             return 'Failed Launch'
         }
+    })
+
+    //catch null values 
+    descriptions = obj.map(element => {
+        if (element.details == null) {
+            return "No description of this launch available."
+        }
+        return element.details
     })
 
     //main loop
@@ -87,33 +96,68 @@ const convertToHtml = (obj) => {
             <div class="card">
                 <div class="card__face card__face--front">
                     <h1>${obj[i].mission_name}</h1>
-                    <h2>${obj[i].rocket.rocket_name}</h2>
-                    <h2>${dates[i]}</h2>
-                    <h2>Flight Number: ${obj[i].flight_number}</h2>
-                    <p>${obj[i].details}</p>
-                    <h3>${successes[i]}</h3>
+                    <p class="desc">${descriptions[i]}</p>
+                    <h3>Flight Number: ${obj[i].flight_number}<br/>${successes[i]}</h3>
+                    <h2>${obj[i].rocket.rocket_name} &bull; ${dates[i]}</h2>
                 </div>
                 <div class="card__face card__face--back">
-                    <h1>Video Link</h1>
-                    <iframe src="${links[i]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h1>Video</h1>
+                    <div class="iframe">Loading video...</div>
                 </div>
             </div>
         </div>
         `
     }
-
     return temp
 }
 
 const addAnimation = () => {
     let htmlCollection = document.getElementsByClassName('card')
     let myCards = [...htmlCollection]
-    myCards.forEach((element) => {
+
+    //for inserting iframes
+    let htmlCollection2 = document.getElementsByClassName('iframe')
+    let iframePlaces = [...htmlCollection2]
+
+    //add card flip animation
+    myCards.forEach((element, index) => {
         element.addEventListener('click', function() {
-            console.log('hello')
             element.classList.toggle('is-flipped');
+            
+            //insert iframes
+            setTimeout(() => {
+                if(!iframePlaces[index].innerHTML.includes('iframe')) {
+                    iframePlaces[index].innerHTML = `<iframe src="${links[index]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                }
+            }, 1000)
         })
     })
 }
 
+const styleElements = () => {
+    let htmlCollection = document.getElementsByClassName('desc')
+    let curDesc = [...htmlCollection]
+    curDesc.forEach((element) => {
+        if(element.innerHTML.length > 150) {
+            element.style = "font-size: 14px;"
+        } 
+        if(element.innerHTML.length > 300) {
+            element.style = "font-size: 13px;"
+        } 
+        if(element.innerHTML.length > 350) {
+            element.style = "font-size: 12px;"
+        }
+        if(element.innerHTML.length > 400) {
+            element.style = "font-size: 11px;"
+        }
+        if(element.innerHTML.length > 500) {
+            element.style = "font-size: 10px;"
+        }
+        if(element.innerHTML.length > 550) {
+            element.style = "font-size: 8px;"
+        }
+    })
+}
+
+//init application
 getData()

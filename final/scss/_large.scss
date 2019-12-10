@@ -1,0 +1,27 @@
+header {
+  text-align: right;
+  position: relative;
+  background-color: white;
+  border-bottom: 20px solid $blue;
+  margin-bottom: 20px;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    position: relative;
+    img {
+      width: 100%;
+      padding: 20px;
+    }
+    h1 {
+      padding: 10px;
+      padding-top: 15px;
+      font-size: 60px;
+      text-transform: uppercase;
+      font-weight: 700;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: $blue;
+    }
+  }
+}
