@@ -5,6 +5,8 @@ $lightblue: #58B4FF;
 $smokywhite: #EAEAEA;
 $limegreen: #C6CC33;
 $darklime: #AEB336;
+$newyellow: #BBBE32;
+$purple: #5B3A80;
 
 //bungee font
 @font-face {
@@ -18,11 +20,26 @@ $darklime: #AEB336;
     src: url("../fonts/roboto-regular-webfont.woff") format("woff"),
     url("../fonts/roboto-regular-webfont.ttf") format("truetype");
 }
+//raleway font regular 
+@font-face {
+    font-family: "RalewayRegular";
+    src: url("../fonts/Raleway-Regular.woff") format("woff"),
+    url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+//raleway font bold 
+@font-face {
+    font-family: "RalewayBold";
+    src: url("../fonts/Raleway-Bold.woff") format("woff"),
+    url("../fonts/Raleway-Bold.ttf") format("truetype");
+}
 
 
 //global
 html {
     box-sizing: border-box;
+}
+body {
+    font-family: "RalewayRegular";
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -35,12 +52,17 @@ h1 {
     font-size: 80px;
     padding: 25px;
 }
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 65px;
+    }
+}
 a {
     text-decoration: none;
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
@@ -49,7 +71,7 @@ a {
     top:0;
     position: fixed;
     width: 100%;
-    height: 125px;
+    height: 110px;
     overflow: hidden;
     background: white;
     font-family: "BungeeRegular";
@@ -58,17 +80,16 @@ a {
     ul {
         display: grid;
         width: 100%;
-        grid-template-columns: 230px 230px 180px 160px 300px;
-        grid-template-rows: 125px;
+        grid-template-rows: 110px;
+        grid-template-columns: repeat(5, 1fr);
         justify-content: center;
         align-items: center;
         text-align: center;
 
         #logo {
             width: 100%;
-            max-height: 115px;
-            padding: 5px;
-            margin: 0 auto;
+            max-height: 100px;
+            padding: 10px;
         }
         li {
             font-size: 40px;
@@ -81,11 +102,14 @@ a {
 }
 //navbar media query
 @media only screen and (max-width: 1300px) {
+    /*
     #navbar ul {
         grid-template-columns: 20fr 20fr 150px 13fr 27fr;
     }
+    */
 }
 @media only screen and (max-width: 1100px) {
+    /*
     #navbar ul {
         grid-template-columns: 200px 200px 180px 130px 270px;
         grid-template-columns: 20fr 20fr 150px 13fr 27fr;
@@ -93,6 +117,7 @@ a {
             font-size: 35px;
         }
     }
+    */
 }
 @media only screen and (max-width: 800px) {
     #navbar ul {
@@ -109,8 +134,8 @@ a {
     z-index: -99999;
     background-color: $lightblue;
     width: 100%;
-    height: calc(100% - 120px);
-    top: 120px;
+    height: calc(100% - 110px);
+    top: 110px;
 }
 canvas {
     position: absolute;
@@ -133,11 +158,11 @@ canvas {
 
         #welcomeContainer {
             width: 100%;
-            height: calc(100vh - 125px);
+            height: calc(100vh - 110px);
             display: grid;
             align-items: center;
             justify-items: center;
-            padding-top: 125px;
+            padding-top: 110px;
 
             #welcomeText {
                 width: 100%;
@@ -166,14 +191,37 @@ canvas {
         padding-left: 20px;
         h1 {
             font-family: "BungeeRegular";
-            font-size: 80px;
+            font-size: 50px;
             padding: 25px;
+            padding-left: 0;
             color: $darkblue;
         }
+        h2 {
+            font-size: 30px;
+            padding: 15px;
+            padding-left: 0;
+            font-family: "RalewayBold";
+        }
         p {
-            font-family: "RobotoRegular";
-            font-size: 40px;
+            font-family: "RalewayRegular";
+            font-size: 26px;
             line-height: 1.5;
+            padding-right: 70px;
+        }
+
+        #aboutEducation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .educationContainer {
+                h2 {
+                    padding-bottom: 0;
+                }
+                p {
+                    font-size: 20px;
+                    padding: 10px;
+                    padding-left: 0;
+                }
+            }
         }
     }
     img {
@@ -208,6 +256,9 @@ canvas {
                 text-align: center;
             }
         }
+        #aboutEducation {
+            grid-template-columns: 1fr;
+        }
     }
 }
 @media only screen and (max-width: 750px) {
@@ -233,9 +284,39 @@ canvas {
     }
 }
 
+//skills
+#skills {
+    margin-top: 100px;
+    text-align: center;
+    h1 {
+        color: $newyellow;
+    }
+
+    .skillSec {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        h2 {
+            font-size: 50px;
+            font-family: "BungeeRegular";
+            padding: 10px;
+            padding-left: 0;
+        }
+        h3 {
+            font-size: 50px;
+            word-spacing: 30px;
+            line-height: 1.4;
+            span {
+                word-spacing: 5px;
+            }
+        }
+    }
+}
+
 //projects
 #projects {
     margin-top: 150px;
+    width: 100%;
 
     h1 {
         color: $pink;
@@ -243,9 +324,11 @@ canvas {
     }
 
     #projectTiles {
-        display: grid;
-        grid-gap: 24px;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        //grid-gap: 24px;
+        //grid-template-columns: 1fr 1fr 1fr;
     }
     a { 
         .project-tile {
@@ -258,6 +341,9 @@ canvas {
             grid-template-columns: 1fr;
             align-items: end;
             box-shadow: 10px 10px $pink;
+            margin: 12px;
+            animation-name: projectOut;
+            animation-duration: 0.5s;
 
             .projectText {
                 .projectTitle {
@@ -267,62 +353,167 @@ canvas {
                     padding-bottom: 10px;
                 }
                 .projectDesc {
-                    font-family: "RobotoRegular";
+                    font-family: "RalewayRegular";
                     font-size: 26px;
                     line-height: 1.33;
                 }
             }
         }
+        .project-tile:hover {
+            animation-name: projectHover;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
     }
 }
+
+@keyframes projectHover {
+    from { margin: 12px; box-shadow: 10px 10px $pink; }
+    to { margin: 22px 0 0 24px; box-shadow: 0px 0px white; }
+}
+@keyframes projectOut {
+    from { margin: 22px 0 0 24px; box-shadow: 0px 0px white; }
+    to { margin: 12px; box-shadow: 10px 10px $pink; }
+}
+
 //projects media queries
 @media only screen and (max-width: 1300px) {
     #projects {
-        padding-left: 20px;
+        padding-right: 20px;
 
         h1 {
             text-align: center;
         }
         #projectTiles {
             justify-items: center;
-            grid-template-columns: 385px 385px;
+            .project-tile {
+                width: 450px;
+                height: 350px;
+            }
         }
     }
 }
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 980px) {
     #projects {
+        #projectTiles {
+            .project-tile {
+                width: 350px;
+                height: 400px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 778px) {
+    #projects {
+        #projectTiles {
+            .project-tile {
+                width: 450px;
+                height: 300px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 518px) {
+    #projects {
+        #projectTiles {
+            .project-tile {
+                width: 350px;
+                height: 440px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 422px) {
+    #projects {
+        h1 {
+            font-size: 50px;
+        }
+        #projectTiles {
+            .project-tile {
+                width: 320px;
+                height: 440px;
+            }
+        }
+    }
+}
+
+
+//contact
+#contact {
+    margin: 100px 0;
+    h1 {
+        color: $purple;
+    }
+    .contactGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        margin: 20px;
+
+        .contactWay {
+            svg {
+                max-width: 100px;
+                fill: $purple;
+                display: inline-block;
+            }
+            h2 {
+                font-size: 40px;
+                position: relative;
+                display: inline-block;
+                top: -29px;
+                left: 10px;
+            }
+            a:hover {
+                color: $darkblue;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1140px) {
+    #contact {
+        max-width: 600px;
+        margin: 100px auto;
         h1 {
             text-align: center;
         }
-        #projectTiles {
-            justify-items: center;
+        .contactGrid {
             grid-template-columns: 1fr;
         }
     }
-    
 }
-@media only screen and (max-width: 750px) {
-    #projects {
-        h1 {
-            font-size: 55px;
+@media only screen and (max-width: 600px) {
+    #contact {
+        max-width: 500px;
+        .contactGrid {
+            .contactWay {
+                svg {
+                    max-width: 80px;
+                }
+                h2 {
+                    font-size: 30px;
+                }
+            }
         }
     }
 }
-
-
-#githubLink {
-    font-size: 60px;
-    font-family: "BungeeRegular";
-    text-align: center;
-    line-height: 1.5;
-    padding: 150px 0;
-
-    #profile-link {
-        color: $limegreen;
-    }
-    #profile-link:hover {
-        color: $darklime;
-        text-decoration: underline;
+@media only screen and (max-width: 480px) {
+    #contact {
+        max-width: 400px;
+        h1 {
+            font-size: 40px;
+        }
+        .contactGrid {
+            .contactWay {
+                svg {
+                    max-width: 33px;
+                }
+                h2 {
+                    font-size: 18px;
+                    top: -13px;
+                }
+            }
+        }
     }
 }
 
@@ -335,7 +526,7 @@ footer {
     h3 {
         color: $smokywhite;
         font-size: 25px;
-        font-family: "RobotoRegular";
+        font-family: "RalewayRegular";
         text-align: center;
         position: relative;
         top: 50%;
