@@ -6,6 +6,10 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
+let balls = 100
+adjustBalls()
+adjustHeight()
+
 const mouse = {
     x: innerWidth / 2,
     y: innerHeight / 2
@@ -23,8 +27,21 @@ addEventListener('resize', () => {
     canvas.width = innerWidth
     canvas.height = innerHeight
 
+    adjustBalls()
+    adjustHeight()
+
     init()
 })
+
+function adjustBalls() {
+    balls = innerWidth / 10
+}
+function adjustHeight() {
+    if (innerWidth < 650) {
+        canvas.height = innerHeight / 2
+        canvas.width = innerWidth
+    }
+}
 
 // Particles
 function Particle(x, y, radius, color) {
@@ -85,7 +102,7 @@ let particles
 function init() {
     particles = []
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < balls; i++) {
         const radius = 4.5
         let x = randomIntFromRange(radius, canvas.width - radius)
         let y = randomIntFromRange(radius, canvas.height - radius)

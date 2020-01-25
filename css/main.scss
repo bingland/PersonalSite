@@ -14,6 +14,12 @@ $purple: #5B3A80;
     src: url("../fonts/bungee-regular-webfont.woff") format("woff"),
     url("../fonts/bungee-regular-webfont.ttf") format("truetype");
 }
+//bungee hairline
+@font-face {
+    font-family: "BungeeHairline";
+    src: url("../fonts/bungee-hairline.woff") format("woff"),
+    url("../fonts/bungee-hairline.otf") format("truetype");
+}
 //roboto font
 @font-face {
     font-family: "RobotoRegular";
@@ -81,18 +87,24 @@ a {
         display: grid;
         width: 100%;
         grid-template-rows: 110px;
-        grid-template-columns: repeat(5, 1fr);
-        justify-content: center;
+        grid-template-columns: 0.9fr 145px 0.8fr 0.8fr 0.8fr;
+        justify-content: end;
         align-items: center;
         text-align: center;
+        grid-gap: 15px;
+        padding-right: 5px;
 
         #logo {
             width: 100%;
             max-height: 100px;
             padding: 10px;
+            justify-self: start;
         }
         li {
             font-size: 40px;
+            font-family: "BungeeHairline";
+            font-weight: bolder;
+
             a:hover {
                 color: $darkblue;
                 text-decoration: underline;
@@ -174,8 +186,19 @@ canvas {
     }
 }
 //welcome section media quieries
-@media only screen and (max-height: 800px) {
-    
+@media only screen and (max-width: 1050px) {
+    #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+        padding: 50px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #welcome-section {
+        height: 50vh;
+
+        #welcomeGrid #welcomeContainer {
+            height: calc(50vh - 110px);
+        }
+    }
 }
 
 
@@ -297,13 +320,13 @@ canvas {
         margin: 0 auto;
         padding: 20px 0;
         h2 {
-            font-size: 50px;
+            font-size: 47px;
             font-family: "BungeeRegular";
             padding: 10px;
             padding-left: 0;
         }
         h3 {
-            font-size: 50px;
+            font-size: 40px;
             word-spacing: 30px;
             line-height: 1.4;
             span {
@@ -316,7 +339,7 @@ canvas {
 //projects
 #projects {
     margin-top: 150px;
-    width: 100%;
+    margin: 0 auto;
 
     h1 {
         color: $pink;
@@ -327,6 +350,7 @@ canvas {
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto;
+        width: auto;
         //grid-gap: 24px;
         //grid-template-columns: 1fr 1fr 1fr;
     }
@@ -430,8 +454,14 @@ canvas {
         }
         #projectTiles {
             .project-tile {
-                width: 320px;
+                width: calc(100% - 20px);
                 height: 440px;
+                .projectTitle {
+                    font-size: 30px;
+                }
+                .projectText {
+                    font-size: 15px;
+                }
             }
         }
     }
