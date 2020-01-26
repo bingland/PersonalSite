@@ -48,7 +48,8 @@ a {
   overflow: hidden;
   background: white;
   font-family: "BungeeRegular";
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2);
+  z-index: 999999999; }
   #navbar ul {
     display: grid;
     width: 100%;
@@ -59,10 +60,10 @@ a {
     text-align: center;
     grid-gap: 15px;
     padding-right: 5px; }
-    #navbar ul #logo {
+    #navbar ul a #logo {
       width: 100%;
       max-height: 100px;
-      padding: 10px;
+      padding: 5px;
       justify-self: start; }
     #navbar ul li {
       font-size: 40px;
@@ -72,27 +73,27 @@ a {
         color: #126AB3;
         text-decoration: underline; }
 
-@media only screen and (max-width: 1300px) {
-  /*
+@media only screen and (max-width: 900px) {
   #navbar ul {
-      grid-template-columns: 20fr 20fr 150px 13fr 27fr;
-  }
-  */ }
-@media only screen and (max-width: 1100px) {
-  /*
-  #navbar ul {
-      grid-template-columns: 200px 200px 180px 130px 270px;
-      grid-template-columns: 20fr 20fr 150px 13fr 27fr;
-      li {
-          font-size: 35px;
-      }
-  }
-  */ }
-@media only screen and (max-width: 800px) {
-  #navbar ul {
+    display: grid;
+    justify-items: center;
     grid-template-columns: 1fr; }
     #navbar ul li {
-      display: none; } }
+      display: none; }
+    #navbar ul a #logo {
+      margin: 0;
+      padding: 10px;
+      padding-left: 20px; } }
+@media only screen and (max-width: 500px) {
+  #navbar ul {
+    display: flex; }
+    #navbar ul li {
+      display: none; }
+    #navbar ul a #logo {
+      margin: 0;
+      padding: 15px;
+      padding-left: 0px;
+      padding-bottom: 5px; } }
 .canvasDiv {
   position: absolute;
   z-index: -99999;
@@ -190,20 +191,22 @@ canvas {
 
 @media only screen and (max-width: 1150px) {
   #aboutMe #aboutMeText h1 {
-    font-size: 60px; }
+    font-size: 50px; }
   #aboutMe #aboutMeText p {
-    font-size: 35px; } }
+    font-size: 26px;
+    padding-right: 20px; } }
 @media only screen and (max-width: 940px) {
   #aboutMe {
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1.2fr 1fr; }
     #aboutMe #aboutMeText h1 {
-      font-size: 55px;
+      font-size: 50px;
       text-align: center; }
     #aboutMe #aboutMeText p {
-      font-size: 30px;
+      font-size: 26px;
       text-align: center; }
-    #aboutMe #aboutEducation {
-      grid-template-columns: 1fr; } }
+    #aboutMe #aboutMeText #aboutEducation {
+      grid-template-columns: 1fr;
+      text-align: center; } }
 @media only screen and (max-width: 750px) {
   #aboutMe {
     grid-template-columns: 1fr; }
@@ -218,6 +221,13 @@ canvas {
     #aboutMe #aboutMeText p {
       font-size: 30px;
       text-align: center; } }
+@media only screen and (max-width: 440px) {
+  #aboutMe #aboutMeText h1 {
+    font-size: 40px;
+    text-align: center; }
+  #aboutMe #aboutMeText p {
+    font-size: 23px;
+    text-align: center; } }
 #skills {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -240,43 +250,54 @@ canvas {
       #skills .skillSec h3 span {
         word-spacing: 5px; }
 
+@media only screen and (max-width: 440px) {
+  #skills h1 {
+    font-size: 50px; }
+  #skills .skillSec h2 {
+    font-size: 40px; }
+  #skills .skillSec h3 {
+    font-size: 30px; } }
 #projects {
   margin-top: 150px;
-  margin: 0 auto; }
+  margin: auto; }
   #projects h1 {
     color: #FF7974;
     padding-bottom: 50px; }
-  #projects #projectTiles {
-    display: flex;
-    flex-wrap: wrap;
+  #projects #projectDiv {
     margin: 0 auto;
-    width: auto; }
-  #projects a .project-tile {
-    border: 1px solid #525252;
-    border-radius: 26px;
-    width: 384px;
-    height: 384px;
-    padding: 26px;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: end;
-    box-shadow: 10px 10px #FF7974;
-    margin: 12px;
-    animation-name: projectOut;
-    animation-duration: 0.5s; }
-    #projects a .project-tile .projectText .projectTitle {
-      font-family: "BungeeRegular";
-      font-size: 40px;
-      line-height: 1.2;
-      padding-bottom: 10px; }
-    #projects a .project-tile .projectText .projectDesc {
-      font-family: "RalewayRegular";
-      font-size: 26px;
-      line-height: 1.33; }
-  #projects a .project-tile:hover {
-    animation-name: projectHover;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards; }
+    display: block;
+    position: relative; }
+    #projects #projectDiv #projectTiles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: auto; }
+      #projects #projectDiv #projectTiles .tile-link .project-tile {
+        border: 1px solid #525252;
+        border-radius: 26px;
+        width: 384px;
+        height: 384px;
+        padding: 26px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: end;
+        box-shadow: 10px 10px #FF7974;
+        margin: 12px;
+        animation-name: projectOut;
+        animation-duration: 0.5s; }
+        #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle {
+          font-family: "BungeeRegular";
+          font-size: 40px;
+          line-height: 1.2;
+          padding-bottom: 10px; }
+        #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc {
+          font-family: "RalewayRegular";
+          font-size: 26px;
+          line-height: 1.33; }
+      #projects #projectDiv #projectTiles .tile-link .project-tile:hover {
+        animation-name: projectHover;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards; }
 
 @keyframes projectHover {
   from {
@@ -297,32 +318,30 @@ canvas {
     padding-right: 20px; }
     #projects h1 {
       text-align: center; }
-    #projects #projectTiles {
-      justify-items: center; }
-      #projects #projectTiles .project-tile {
-        width: 450px;
-        height: 350px; } }
+    #projects #projectDiv #projectTiles .tile-link .project-tile {
+      width: 450px;
+      height: 350px; } }
 @media only screen and (max-width: 980px) {
-  #projects #projectTiles .project-tile {
+  #projects #projectDiv #projectTiles .tile-link .project-tile {
     width: 350px;
     height: 400px; } }
 @media only screen and (max-width: 778px) {
-  #projects #projectTiles .project-tile {
+  #projects #projectDiv #projectTiles .tile-link .project-tile {
     width: 450px;
     height: 300px; } }
 @media only screen and (max-width: 518px) {
-  #projects #projectTiles .project-tile {
+  #projects #projectDiv #projectTiles .tile-link .project-tile {
     width: 350px;
     height: 440px; } }
-@media only screen and (max-width: 422px) {
+@media only screen and (max-width: 400px) {
   #projects h1 {
     font-size: 50px; }
-  #projects #projectTiles .project-tile {
+  #projects #projectDiv #projectTiles .tile-link .project-tile {
     width: calc(100% - 20px);
     height: 440px; }
-    #projects #projectTiles .project-tile .projectTitle {
+    #projects #projectDiv #projectTiles .tile-link .project-tile .projectTitle {
       font-size: 30px; }
-    #projects #projectTiles .project-tile .projectText {
+    #projects #projectDiv #projectTiles .tile-link .project-tile .projectText {
       font-size: 15px; } }
 #contact {
   margin: 100px 0; }
@@ -342,7 +361,8 @@ canvas {
       position: relative;
       display: inline-block;
       top: -29px;
-      left: 10px; }
+      left: 10px;
+      z-index: -33; }
     #contact .contactGrid .contactWay a:hover {
       color: #126AB3;
       text-decoration: underline; }
