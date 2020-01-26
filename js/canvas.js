@@ -1,5 +1,6 @@
 import { randomIntFromRange, randomColor, distance, rotate, resolveCollision } from './utils.js'
 
+const canvasContainer = document.querySelector('.canvasDiv')
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -38,8 +39,12 @@ function adjustBalls() {
 }
 function adjustHeight() {
     if (innerWidth < 650) {
+        console.log(canvasContainer.offsetHeight)
+        //canvasContainer.style.height = '50%'
         canvas.height = innerHeight / 2
-        canvas.width = innerWidth
+    } else {
+        //canvasContainer.style.height = '100%'
+        canvas.height = innerHeight
     }
 }
 

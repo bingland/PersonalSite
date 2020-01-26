@@ -135,8 +135,21 @@ canvas {
 @media only screen and (max-width: 650px) {
   #welcome-section {
     height: 50vh; }
-    #welcome-section #welcomeGrid #welcomeContainer {
-      height: calc(50vh - 110px); } }
+    #welcome-section #welcomeGrid {
+      height: calc(50vh - 110px); }
+      #welcome-section #welcomeGrid #welcomeContainer {
+        height: calc(50vh - 110px); }
+        #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+          height: 100%;
+          padding: 5px;
+          margin-top: 110px; }
+          #welcome-section #welcomeGrid #welcomeContainer #welcomeText img {
+            width: 100%; }
+
+  .canvasDiv {
+    height: calc(50% - 110px); }
+    .canvasDiv canvas {
+      height: 100%; } }
 #aboutMe {
   margin-top: 100px;
   display: grid;
@@ -207,6 +220,7 @@ canvas {
       text-align: center; } }
 #skills {
   margin-top: 100px;
+  margin-bottom: 100px;
   text-align: center; }
   #skills h1 {
     color: #BBBE32; }
@@ -365,7 +379,7 @@ footer {
   footer h3 {
     color: #EAEAEA;
     font-size: 25px;
-    font-family: "RalewayRegular";
+    font-family: "BungeeHairline";
     text-align: center;
     position: relative;
     top: 50%;

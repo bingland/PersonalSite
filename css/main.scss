@@ -195,8 +195,25 @@ canvas {
     #welcome-section {
         height: 50vh;
 
-        #welcomeGrid #welcomeContainer {
+        #welcomeGrid {
             height: calc(50vh - 110px);
+            #welcomeContainer {
+                height: calc(50vh - 110px);
+                #welcomeText {
+                    height: 100%;
+                    padding: 5px;
+                    margin-top: 110px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .canvasDiv {
+        height: calc(50% - 110px);;
+        canvas {
+            height: 100%;
         }
     }
 }
@@ -310,6 +327,7 @@ canvas {
 //skills
 #skills {
     margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
     h1 {
         color: $newyellow;
@@ -556,7 +574,7 @@ footer {
     h3 {
         color: $smokywhite;
         font-size: 25px;
-        font-family: "RalewayRegular";
+        font-family: "BungeeHairline";
         text-align: center;
         position: relative;
         top: 50%;
