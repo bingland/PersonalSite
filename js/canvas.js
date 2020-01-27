@@ -34,14 +34,15 @@ addEventListener('resize', () => {
     init()
 })
 
-function adjustBalls() {
-    balls = innerWidth / 10
+function adjustBalls(factor) {
+    balls = canvas.width / 10
 }
 function adjustHeight() {
     if (innerWidth < 650) {
         console.log(canvasContainer.offsetHeight)
         //canvasContainer.style.height = '50%'
-        canvas.height = innerHeight / 2
+        canvas.height = innerHeight/3
+        balls = canvas.width / 20
     } else {
         //canvasContainer.style.height = '100%'
         canvas.height = innerHeight

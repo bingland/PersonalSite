@@ -63,7 +63,7 @@ a {
     #navbar ul a #logo {
       width: 100%;
       max-height: 100px;
-      padding: 5px;
+      padding: 7px;
       justify-self: start; }
     #navbar ul li {
       font-size: 40px;
@@ -85,15 +85,28 @@ a {
       padding: 10px;
       padding-left: 20px; } }
 @media only screen and (max-width: 500px) {
-  #navbar ul {
-    display: flex; }
-    #navbar ul li {
-      display: none; }
-    #navbar ul a #logo {
-      margin: 0;
-      padding: 15px;
-      padding-left: 0px;
-      padding-bottom: 5px; } }
+  #navbar {
+    height: 80px; }
+    #navbar ul {
+      display: grid;
+      grid-template-columns: 1fr 150px;
+      grid-template-rows: 80px;
+      justify-items: left; }
+      #navbar ul li {
+        display: none; }
+      #navbar ul a #logo {
+        width: auto;
+        height: 100%;
+        margin: 0;
+        margin-left: 10px;
+        padding: 23px;
+        padding-left: 15px; }
+      #navbar ul #hamburger {
+        display: block;
+        width: 80px;
+        padding: 10px;
+        justify-self: right;
+        fill: #525252; } }
 .canvasDiv {
   position: absolute;
   z-index: -99999;
@@ -101,12 +114,11 @@ a {
   width: 100%;
   height: calc(100% - 110px);
   top: 110px; }
-
-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4; }
+  .canvasDiv canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4; }
 
 #welcome-section {
   height: 100vh;
@@ -135,11 +147,11 @@ canvas {
     padding: 50px; } }
 @media only screen and (max-width: 650px) {
   #welcome-section {
-    height: 50vh; }
+    height: 300px; }
     #welcome-section #welcomeGrid {
-      height: calc(50vh - 110px); }
+      height: calc(400px - 110px); }
       #welcome-section #welcomeGrid #welcomeContainer {
-        height: calc(50vh - 110px); }
+        height: calc(400px - 110px); }
         #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
           height: 100%;
           padding: 5px;
@@ -148,9 +160,18 @@ canvas {
             width: 100%; }
 
   .canvasDiv {
-    height: calc(50% - 110px); }
+    height: calc(400px - 110px); }
     .canvasDiv canvas {
       height: 100%; } }
+@media only screen and (max-width: 500px) {
+  #welcome-section #welcomeGrid #welcomeContainer {
+    padding-top: 80px; }
+    #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+      margin-top: 80px;
+      padding: 0 30px; }
+
+  .canvasDiv {
+    top: 80px; } }
 #aboutMe {
   margin-top: 100px;
   display: grid;
@@ -221,13 +242,18 @@ canvas {
     #aboutMe #aboutMeText p {
       font-size: 30px;
       text-align: center; } }
+@media only screen and (max-width: 650px) {
+  #aboutMe {
+    margin-top: 130px; } }
 @media only screen and (max-width: 440px) {
-  #aboutMe #aboutMeText h1 {
-    font-size: 40px;
-    text-align: center; }
-  #aboutMe #aboutMeText p {
-    font-size: 23px;
-    text-align: center; } }
+  #aboutMe {
+    margin-top: 80px; }
+    #aboutMe #aboutMeText h1 {
+      font-size: 40px;
+      text-align: center; }
+    #aboutMe #aboutMeText p {
+      font-size: 23px;
+      text-align: center; } }
 #skills {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -246,7 +272,8 @@ canvas {
     #skills .skillSec h3 {
       font-size: 40px;
       word-spacing: 30px;
-      line-height: 1.4; }
+      line-height: 1.4;
+      padding: 10px; }
       #skills .skillSec h3 span {
         word-spacing: 5px; }
 
@@ -318,9 +345,11 @@ canvas {
     padding-right: 20px; }
     #projects h1 {
       text-align: center; }
-    #projects #projectDiv #projectTiles .tile-link .project-tile {
-      width: 450px;
-      height: 350px; } }
+    #projects #projectDiv #projectTiles {
+      justify-content: center; }
+      #projects #projectDiv #projectTiles .tile-link .project-tile {
+        width: 450px;
+        height: 350px; } }
 @media only screen and (max-width: 980px) {
   #projects #projectDiv #projectTiles .tile-link .project-tile {
     width: 350px;
@@ -388,10 +417,16 @@ canvas {
     #contact h1 {
       font-size: 40px; }
     #contact .contactGrid .contactWay svg {
-      max-width: 33px; }
+      max-width: 35px; }
     #contact .contactGrid .contactWay h2 {
-      font-size: 18px;
+      font-size: 22px;
       top: -13px; } }
+@media only screen and (max-width: 325px) {
+  #contact .contactGrid .contactWay svg {
+    max-width: 35px; }
+  #contact .contactGrid .contactWay h2 {
+    font-size: 18px;
+    top: -13px; } }
 footer {
   width: 100%;
   height: 140px;
@@ -403,6 +438,7 @@ footer {
     text-align: center;
     position: relative;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */

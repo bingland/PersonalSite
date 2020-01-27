@@ -98,7 +98,7 @@ a {
             #logo {
                 width: 100%;
                 max-height: 100px;
-                padding: 5px;
+                padding: 7px;
                 justify-self: start;
             }
         }
@@ -136,21 +136,35 @@ a {
 }
 @media only screen and (max-width: 500px) {
     #navbar {
+        height: 80px;
         ul {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: 80px;
+            justify-items: left;
             li {
                 display: none;
             }
             a{
                 #logo {
+                    width: auto;
+                    height: 100%;
                     margin: 0;
-                    padding: 15px;
-                    padding-left: 0px;
-                    padding-bottom: 5px;
+                    margin-left: 10px;
+                    padding: 23px;
+                    padding-left: 15px;
                 }
+            }
+            #hamburger {
+                display: block;
+                width: 80px;
+                padding: 10px;
+                justify-self: right;
+                fill: $grey;
             }
         }
     }
+
 }
 
 //canvas
@@ -161,12 +175,13 @@ a {
     width: 100%;
     height: calc(100% - 110px);
     top: 110px;
-}
-canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
+
+    canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
 }
 
 //welcome section
@@ -206,12 +221,12 @@ canvas {
 }
 @media only screen and (max-width: 650px) {
     #welcome-section {
-        height: 50vh;
+        height: 300px;
 
         #welcomeGrid {
-            height: calc(50vh - 110px);
+            height: calc(400px - 110px);
             #welcomeContainer {
-                height: calc(50vh - 110px);
+                height: calc(400px - 110px);
                 #welcomeText {
                     height: 100%;
                     padding: 5px;
@@ -224,10 +239,26 @@ canvas {
         }
     }
     .canvasDiv {
-        height: calc(50% - 110px);;
+        height: calc(400px - 110px);;
         canvas {
             height: 100%;
         }
+    }
+}
+@media only screen and (max-width: 500px) {
+    #welcome-section {
+        #welcomeGrid {
+            #welcomeContainer {
+                padding-top: 80px;
+                #welcomeText {
+                    margin-top: 80px;
+                    padding: 0 30px;
+                }
+            }
+        }
+    } 
+    .canvasDiv {
+        top: 80px;
     }
 }
 
@@ -338,8 +369,12 @@ canvas {
         }
     }
 }
+@media only screen and (max-width: 650px) {
+    #aboutMe { margin-top: 130px; }
+}
 @media only screen and (max-width: 440px) {
     #aboutMe {
+        margin-top: 80px;
         #aboutMeText {
             h1 {
                 font-size: 40px;
@@ -379,6 +414,7 @@ canvas {
             font-size: 40px;
             word-spacing: 30px;
             line-height: 1.4;
+            padding: 10px;
             span {
                 word-spacing: 5px;
             }
@@ -477,6 +513,7 @@ canvas {
             text-align: center;
         }
         #projectDiv #projectTiles {
+            justify-content: center;
             .tile-link .project-tile {
                 width: 450px;
                 height: 350px;
@@ -602,9 +639,25 @@ canvas {
             font-size: 40px;
         }
         .contactGrid {
+            
             .contactWay {
                 svg {
-                    max-width: 33px;
+                    max-width: 35px;
+                }
+                h2 {
+                    font-size: 22px;
+                    top: -13px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 325px) {
+    #contact {
+        .contactGrid {
+            .contactWay {
+                svg {
+                    max-width: 35px;
                 }
                 h2 {
                     font-size: 18px;
@@ -629,6 +682,7 @@ footer {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        padding: 10px;
     }
 }
 
