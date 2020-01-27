@@ -1,0 +1,525 @@
+/* fonts */
+@font-face {
+  font-family: 'Josefin Sans Bold';
+  src: url('fonts/JosefinSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+
+.bigWrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* header */
+/* nav bar */
+header {
+    height: 100vh;
+    box-sizing: border-box;
+}
+nav {
+    background-color: #17eebe;
+    height: 100px;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+nav img {
+    padding: 15px;
+    height: 100px;
+    box-sizing:border-box;
+    float: left;
+}
+nav ul {
+    float: right;
+    margin-top: 37px;
+    padding-right: 20px;
+}
+nav li {
+    float: left;
+    font-family: 'Roboto Condensed';
+    font-size: 26px;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+nav li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transition: all 0.15s ease-out 0s;
+}
+nav li a:hover:before {
+    transform: scaleX(1);
+}
+@media only screen and (max-width: 1000px) {
+    ul {
+        display: none;
+    }
+}
+
+/* carousel */
+.carousel {
+    background-image: url(../img/carousel1.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    height: calc(100% - 100px);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.carouselText {
+    align-self: center;
+    padding-left: 7%;
+    text-shadow: 3px 3px 5px rgba(0,0,0, 0.3);
+}
+.carouselText h2 {
+    font-family: 'Josefin Sans Bold';
+    color: white;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: -3px;
+}
+.carouselText h4 {
+    font-family: 'Roboto';
+    color: white;
+    margin-top: 5px;
+    font-size: 20px;
+    width: 400px;
+    line-height: 25px;
+}
+.carouselText a {
+    color: white;
+    font-style: italic;
+}
+
+/* news */
+.newsSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    color: white;
+    padding: 0 20px;
+}
+.newsTitle {
+    font-family: 'Josefin Sans Bold';
+    color: black;
+    font-size: 80px;
+    padding: 20px;
+    padding-left: 40px;
+    margin-top: 30px;
+}
+.newsContainer h2 {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -1px;
+    font-size: 33px;
+    padding: 12px;
+}
+.newsContainer p {
+    font-family: Arial;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 0;
+    line-height: 23px;
+}
+.newsContainer p a{
+    color: white;
+    font-style: italic;
+}
+.newsContainer:nth-child(1) {
+    background-color: #007eba;
+}
+.newsContainer:nth-child(2) {
+    background-color: #447187;
+}
+.newsContainer:nth-child(3) {
+    background-color: #18edbf;
+}
+.newsContainer:nth-child(4) {
+    background-color: #ef6554;
+}
+.newsContainer img {
+    width: 100%;
+    height: auto;
+}
+@media only screen and (max-width: 1000px) {
+    .newsSection {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .newsSection {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* education type section */
+.educationTypeSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.educationContainer img{
+    width: 100%;
+}
+.educationContainer h2 {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -1px;
+    font-size: 29px;
+    padding: 12px;
+    line-height: 38px;
+}
+.educationContainer h4 {
+    font-family: Arial;
+    letter-spacing: -1px;
+    font-size: 20px;
+    padding: 12px;
+    padding-top: 0;
+    line-height: 27px;
+}
+.educationContainer a {
+    font-style: italic;
+    color: #e15442;
+    text-decoration: underline;
+}
+@media only screen and (max-width: 760px) {
+    .educationTypeSection{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* apply block */
+.blockContainer {
+    padding: 20px;
+}
+.applyBlock {
+    width: 100%;
+    height: 80vh;
+    background-image: url(../img/applytoday.jpg);
+    background-size: cover;
+    border: 20px solid #17eebe;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.applyText {
+    color: white;
+    font-family: 'Josefin Sans Bold';
+    align-self: center;
+    text-shadow: 3px 3px 5px rgba(0,0,0, 0.3);
+}
+.applyText h2 {
+    letter-spacing: -6px;
+    font-size: 70px;
+    padding: 22px;
+    line-height: 38px;
+}
+.applyText p {
+    letter-spacing: -2px;
+    font-size: 40px;
+    width: 50%;
+    padding: 12px;
+    line-height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.applyText a {
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    background-color: #ef6554;
+    padding: 15px;
+    border-radius: 15px;
+    border: 8px solid #D94142;
+}
+@media only screen and (max-width: 760px) {
+    .applyText p {
+        display: none;
+    }
+    .applyText h2 {
+        margin-bottom: 30px;
+        line-height: 70px;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .applyBlock {
+        height: 60vh;
+    }
+}
+
+/* info section */
+.infoSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 60px 0;
+}
+.infoBox {
+    text-align: center;
+}
+.infoBox:nth-child(odd){
+    color: #0d5678;
+}
+.infoBox:nth-child(even){
+    color: #e15442;
+}
+.infoNumber {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -6px;
+    font-size: 90px;
+    padding: 22px;
+    line-height: 38px;
+}
+.infoText {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -2px;
+    font-size: 40px;
+    padding: 22px;
+    padding-top: 15px;
+    line-height: 38px;
+    color: black;
+}
+@media only screen and (max-width: 870px) {
+    .infoSection {
+        grid-template-columns: 1fr;
+        margin: 20px 0;
+    }
+    .infoBox {
+        padding: 20px 0;
+    }
+}
+
+
+/* quote area */
+.quoteArea {
+    background-image: url("../img/quotecover.jpg");
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 2fr 3fr 0.3fr;
+}
+.quoteIcon img {
+    border-radius: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px;
+}
+.quoteText {
+    align-self: center;
+}
+.quoteText h2 {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -2px;
+    font-size: 35px;
+    padding: 22px;
+    padding-bottom: 0;
+    line-height: 50px;
+    color: white;
+}
+.quoteText h3 {
+    text-align: right;
+    font-family: Arial;
+    letter-spacing: -2px;
+    font-size: 30px;
+    font-style: italic;
+    padding: 22px;
+    padding-top: 0;
+    line-height: 50px;
+    color: white;
+}
+@media only screen and (max-width: 1060px) {
+    .quoteIcon {
+        display: grid;
+        height: 100%;
+    }
+    .quoteIcon img {
+        align-self: center;
+        padding: 40px;
+    }
+    .quoteText h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .quoteText h3 {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .quoteIcon img {
+        padding: 30px;
+    }
+    .quoteText h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .quoteText h3 {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .quoteArea {
+        grid-template-columns: 1fr;
+    }
+    .quoteIcon img {
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+
+
+/* athletics news */
+.athleticsOutside {
+    padding: 20px;
+}
+.athleticsArea {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "main main topright" 
+    "main main bottomright";
+}
+.b1 {
+    grid-area: main;
+    background-image: url(../img/athletic1.jpg);
+    background-size: cover;
+}
+.b1text {
+    align-self: end;
+}
+.b2 {
+    grid-area: topright;
+    background-image: url(../img/athletic2.jpg);
+    background-size: cover;
+    height: 300px;
+}
+.b3 {
+    grid-area: bottomright;
+    background-image: url(../img/athletic3.jpg);
+    background-size: cover;
+    height: 300px;
+}
+.b2 h3, .b3 h3 {
+    align-self: end;
+}
+.athleticBox {
+    display: grid;
+}
+.athleticBox h2 {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -2px;
+    font-size: 55px;
+    padding: 22px;
+    padding-bottom: 0;
+    line-height: 50px;
+    color: white;
+}
+.athleticBox p {
+    font-family: Arial;
+    letter-spacing: -2px;
+    font-size: 30px;
+    padding: 22px;
+    padding-top: 0;
+    line-height: 35px;
+    color: white;
+}
+.athleticBox h3 {
+    font-family: 'Josefin Sans Bold';
+    letter-spacing: -2px;
+    font-size: 33px;
+    padding: 22px;
+    line-height: 35px;
+    color: white;
+}
+.athleticsTitle {
+    font-family: 'Josefin Sans Bold';
+    color: black;
+    font-size: 80px;
+    padding: 20px;
+    padding-left: 40px;
+    margin-top: 30px;
+}
+@media only screen and (max-width: 900px) {
+    .athleticsArea {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "main"
+        "topright"
+        "bottomright";
+        grid-auto-rows: 300px;
+    }
+    .b1text h2 {
+        letter-spacing: -2px;
+        font-size: 33px;
+        padding: 22px;
+        line-height: 35px;
+        color: white;
+    }
+    .b1text p {
+        display: none;
+    }
+}
+
+/* footer */
+footer {
+    background-color: #17eebe;
+    height: 120px;
+}
+footer p {
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 22px;
+    padding-top: 22px; 
+}
+
+
+/*
+    Color index
+
+    Main green: 17eebe
+
+    News
+    Box 1: 007eba
+    Box 2: 447187
+    Box 3: 18edbf
+    Box 4: ef6554
+
+    Types of education
+    anchor tag red: e15442
+
+    Info Section
+    Blue color: 0d5678
+    Red color: e15442
+
+*/
+
+
+
+
+
+
+
+
+
+
+
