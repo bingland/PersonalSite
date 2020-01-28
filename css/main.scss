@@ -596,16 +596,21 @@ a {
                 display: inline-block;
             }
             h2 {
-                font-size: 40px;
                 position: relative;
                 display: inline-block;
                 top: -29px;
                 left: 10px;
                 z-index: -33;
-            }
-            a:hover {
-                color: $darkblue;
-                text-decoration: underline;
+                font-size: 40px;
+                
+                .contactLink {
+                    font-size: 40px;
+                }
+
+                .contactLink:hover {
+                    color: $darkblue;
+                    text-decoration: underline;
+                }
             }
         }
     }

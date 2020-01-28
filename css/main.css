@@ -385,15 +385,17 @@ a {
       fill: #5B3A80;
       display: inline-block; }
     #contact .contactGrid .contactWay h2 {
-      font-size: 40px;
       position: relative;
       display: inline-block;
       top: -29px;
       left: 10px;
-      z-index: -33; }
-    #contact .contactGrid .contactWay a:hover {
-      color: #126AB3;
-      text-decoration: underline; }
+      z-index: -33;
+      font-size: 40px; }
+      #contact .contactGrid .contactWay h2 .contactLink {
+        font-size: 40px; }
+      #contact .contactGrid .contactWay h2 .contactLink:hover {
+        color: #126AB3;
+        text-decoration: underline; }
 
 @media only screen and (max-width: 1140px) {
   #contact {
