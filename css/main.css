@@ -1,520 +1,161 @@
-@font-face {
-  font-family: "BungeeRegular";
-  src: url("../fonts/bungee-regular-webfont.woff") format("woff"), url("../fonts/bungee-regular-webfont.ttf") format("truetype"); }
-@font-face {
-  font-family: "BungeeHairline";
-  src: url("../fonts/bungee-hairline.woff") format("woff"), url("../fonts/bungee-hairline.otf") format("truetype"); }
-@font-face {
-  font-family: "RobotoRegular";
-  src: url("../fonts/roboto-regular-webfont.woff") format("woff"), url("../fonts/roboto-regular-webfont.ttf") format("truetype"); }
-@font-face {
-  font-family: "RalewayRegular";
-  src: url("../fonts/Raleway-Regular.woff") format("woff"), url("../fonts/Raleway-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "RalewayBold";
-  src: url("../fonts/Raleway-Bold.woff") format("woff"), url("../fonts/Raleway-Bold.ttf") format("truetype"); }
-html {
-  box-sizing: border-box; }
+@font-face { font-family: "BungeeRegular"; src: url("../fonts/bungee-regular-webfont.woff") format("woff"), url("../fonts/bungee-regular-webfont.ttf") format("truetype"); }
+@font-face { font-family: "BungeeHairline"; src: url("../fonts/bungee-hairline.woff") format("woff"), url("../fonts/bungee-hairline.otf") format("truetype"); }
+@font-face { font-family: "RobotoRegular"; src: url("../fonts/roboto-regular-webfont.woff") format("woff"), url("../fonts/roboto-regular-webfont.ttf") format("truetype"); }
+@font-face { font-family: "RalewayRegular"; src: url("../fonts/Raleway-Regular.woff") format("woff"), url("../fonts/Raleway-Regular.ttf") format("truetype"); }
+@font-face { font-family: "RalewayBold"; src: url("../fonts/Raleway-Bold.woff") format("woff"), url("../fonts/Raleway-Bold.ttf") format("truetype"); }
+html { box-sizing: border-box; }
 
-body {
-  font-family: "RalewayRegular"; }
+body { font-family: "RalewayRegular"; }
 
-*, *:before, *:after {
-  box-sizing: inherit; }
+*, *:before, *:after { box-sizing: inherit; }
 
-* {
-  color: #525252; }
+* { color: #525252; }
 
-h1 {
-  font-family: "BungeeRegular";
-  font-size: 80px;
-  padding: 25px; }
+h1 { font-family: "BungeeRegular"; font-size: 80px; padding: 25px; }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 65px; } }
-a {
-  text-decoration: none; }
+@media only screen and (max-width: 600px) { h1 { font-size: 65px; } }
+a { text-decoration: none; }
 
-.wrapper {
-  max-width: 1250px;
-  margin: 0 auto; }
+.wrapper { max-width: 1250px; margin: 0 auto; }
 
-#navbar {
-  top: 0;
-  position: fixed;
-  width: 100%;
-  height: 110px;
-  background: white;
-  font-family: "BungeeRegular";
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2);
-  z-index: 999999999; }
-  #navbar ul {
-    display: grid;
-    width: 100%;
-    grid-template-rows: 110px;
-    grid-template-columns: 0.9fr 145px 0.8fr 0.8fr 0.8fr;
-    justify-content: end;
-    align-items: center;
-    text-align: center;
-    grid-gap: 15px;
-    padding-right: 5px; }
-    #navbar ul a #logo {
-      width: 100%;
-      max-height: 100px;
-      padding: 7px;
-      justify-self: start; }
-    #navbar ul li {
-      font-size: 40px;
-      font-family: "BungeeHairline";
-      font-weight: bolder; }
-      #navbar ul li a:hover {
-        color: #126AB3; }
-    #navbar ul #hamburger {
-      display: none; }
-  #navbar .popupBar {
-    width: 100%;
-    background-color: #126AB3;
-    position: fixed;
-    display: none;
-    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2); }
-    #navbar .popupBar ul {
-      color: white;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center; }
-      #navbar .popupBar ul li {
-        width: auto;
-        display: block;
-        padding: 6px 10px;
-        font-size: 30px; }
-        #navbar .popupBar ul li a {
-          color: white; }
-      #navbar .popupBar ul li:hover {
-        background-color: #0085f1; }
+#navbar { top: 0; position: fixed; width: 100%; height: 110px; background: white; font-family: "BungeeRegular"; box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2); z-index: 999999999; }
+#navbar ul { display: grid; width: 100%; grid-template-rows: 110px; grid-template-columns: 0.9fr 145px 0.8fr 0.8fr 0.8fr; justify-content: end; align-items: center; text-align: center; grid-gap: 15px; padding-right: 5px; }
+#navbar ul a #logo { width: 100%; max-height: 100px; padding: 7px; justify-self: start; }
+#navbar ul li { font-size: 40px; font-family: "BungeeHairline"; font-weight: bolder; }
+#navbar ul li a:hover { color: #126AB3; }
+#navbar ul #hamburger { display: none; }
+#navbar .popupBar { width: 100%; background-color: #126AB3; position: fixed; display: none; box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2); }
+#navbar .popupBar ul { color: white; grid-template-columns: 1fr 1fr 1fr 1fr; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+#navbar .popupBar ul li { width: auto; display: block; padding: 6px 10px; font-size: 30px; }
+#navbar .popupBar ul li a { color: white; }
+#navbar .popupBar ul li:hover { background-color: #0085f1; }
 
-@media only screen and (max-width: 900px) {
-  #navbar ul {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr; }
-    #navbar ul li {
-      display: none; }
-    #navbar ul a #logo {
-      margin: 0;
-      padding: 10px;
-      padding-left: 0px; }
-  #navbar .popupBar {
-    display: block; } }
-@media only screen and (max-width: 650px) {
-  #navbar ul {
-    grid-template-columns: 1fr 70px; }
-    #navbar ul a {
-      justify-self: left; }
-    #navbar ul #hamburger {
-      display: inline-block;
-      fill: #525252;
-      margin-right: 10px; }
-  #navbar .popupBar {
-    display: none; } }
-@media only screen and (max-width: 500px) {
-  #navbar {
-    height: 80px; }
-    #navbar ul {
-      display: grid;
-      grid-template-columns: 1fr 150px;
-      grid-template-rows: 80px;
-      justify-items: left; }
-      #navbar ul li {
-        display: none; }
-      #navbar ul a #logo {
-        width: auto;
-        height: 100%;
-        margin: 0;
-        margin-left: 10px;
-        padding: 23px;
-        padding-left: 15px; }
-      #navbar ul #hamburger {
-        display: block;
-        width: 80px;
-        padding: 10px;
-        justify-self: right;
-        fill: #525252; }
-    #navbar .popupBar {
-      display: none; }
-      #navbar .popupBar ul {
-        padding: 0; }
-        #navbar .popupBar ul li {
-          width: 100%;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-          font-size: 32px; } }
-.canvasDiv {
-  position: absolute;
-  z-index: -99999;
-  background-color: #58B4FF;
-  width: 100%;
-  height: calc(100% - 110px);
-  top: 110px; }
-  .canvasDiv canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4; }
+@media only screen and (max-width: 900px) { #navbar ul { display: grid; justify-items: center; grid-template-columns: 1fr; }
+  #navbar ul li { display: none; }
+  #navbar ul a #logo { margin: 0; padding: 10px; padding-left: 0px; }
+  #navbar .popupBar { display: block; } }
+@media only screen and (max-width: 650px) { #navbar ul { grid-template-columns: 1fr 70px; }
+  #navbar ul a { justify-self: left; }
+  #navbar ul #hamburger { display: inline-block; fill: #525252; margin-right: 10px; }
+  #navbar .popupBar { display: none; } }
+@media only screen and (max-width: 500px) { #navbar { height: 80px; }
+  #navbar ul { display: grid; grid-template-columns: 1fr 150px; grid-template-rows: 80px; justify-items: left; }
+  #navbar ul li { display: none; }
+  #navbar ul a #logo { width: auto; height: 100%; margin: 0; margin-left: 10px; padding: 23px; padding-left: 15px; }
+  #navbar ul #hamburger { display: block; width: 80px; padding: 10px; justify-self: right; fill: #525252; }
+  #navbar .popupBar { display: none; }
+  #navbar .popupBar ul { padding: 0; }
+  #navbar .popupBar ul li { width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.171); font-size: 32px; } }
+.canvasDiv { position: absolute; z-index: -99999; background-color: #58B4FF; width: 100%; height: calc(100% - 110px); top: 110px; }
+.canvasDiv canvas { position: absolute; width: 100%; height: 100%; opacity: 0.4; }
 
-#welcome-section {
-  height: 100vh;
-  text-align: center; }
-  #welcome-section #welcomeGrid {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    align-items: center;
-    justify-items: center; }
-    #welcome-section #welcomeGrid #welcomeContainer {
-      width: 100%;
-      height: calc(100vh - 110px);
-      display: grid;
-      align-items: center;
-      justify-items: center;
-      padding-top: 110px; }
-      #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        max-width: 1000px; }
+#welcome-section { height: 100vh; text-align: center; }
+#welcome-section #welcomeGrid { width: 100%; height: 100%; display: grid; align-items: center; justify-items: center; }
+#welcome-section #welcomeGrid #welcomeContainer { width: 100%; height: calc(100vh - 110px); display: grid; align-items: center; justify-items: center; padding-top: 110px; }
+#welcome-section #welcomeGrid #welcomeContainer #welcomeText { width: 100%; height: 100%; padding: 20px; max-width: 1000px; }
 
-@media only screen and (max-width: 1050px) {
-  #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
-    padding: 50px; } }
-@media only screen and (max-width: 650px) {
-  #welcome-section {
-    height: 300px; }
-    #welcome-section #welcomeGrid {
-      height: calc(400px - 110px); }
-      #welcome-section #welcomeGrid #welcomeContainer {
-        height: calc(400px - 110px); }
-        #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
-          height: 100%;
-          padding: 5px;
-          margin-top: 110px; }
-          #welcome-section #welcomeGrid #welcomeContainer #welcomeText img {
-            width: 100%; }
+@media only screen and (max-width: 1050px) { #welcome-section #welcomeGrid #welcomeContainer #welcomeText { padding: 50px; } }
+@media only screen and (max-width: 650px) { #welcome-section { height: 300px; }
+  #welcome-section #welcomeGrid { height: calc(400px - 110px); }
+  #welcome-section #welcomeGrid #welcomeContainer { height: calc(400px - 110px); }
+  #welcome-section #welcomeGrid #welcomeContainer #welcomeText { height: 100%; padding: 5px; margin-top: 110px; }
+  #welcome-section #welcomeGrid #welcomeContainer #welcomeText img { width: 100%; }
+  .canvasDiv { height: calc(400px - 110px); }
+  .canvasDiv canvas { height: 100%; } }
+@media only screen and (max-width: 500px) { #welcome-section #welcomeGrid #welcomeContainer { padding-top: 80px; }
+  #welcome-section #welcomeGrid #welcomeContainer #welcomeText { margin-top: 80px; padding: 0 30px; }
+  .canvasDiv { top: 80px; } }
+#aboutMe { margin-top: 100px; display: grid; grid-template-columns: 70% 30%; align-items: center; box-sizing: border-box; }
+#aboutMe #aboutMeText { padding-left: 20px; }
+#aboutMe #aboutMeText h1 { font-family: "BungeeRegular"; font-size: 50px; padding: 25px; padding-left: 0; color: #126AB3; }
+#aboutMe #aboutMeText h2 { font-size: 30px; padding: 15px; padding-left: 0; font-family: "RalewayBold"; }
+#aboutMe #aboutMeText p { font-family: "RalewayRegular"; font-size: 26px; line-height: 1.5; padding-right: 70px; }
+#aboutMe #aboutMeText #aboutEducation { display: grid; grid-template-columns: 1fr 1fr; }
+#aboutMe #aboutMeText #aboutEducation .educationContainer h2 { padding-bottom: 0; }
+#aboutMe #aboutMeText #aboutEducation .educationContainer p { font-size: 20px; padding: 10px; padding-left: 0; }
+#aboutMe img { width: 100%; box-sizing: border-box; padding: 20px; }
 
-  .canvasDiv {
-    height: calc(400px - 110px); }
-    .canvasDiv canvas {
-      height: 100%; } }
-@media only screen and (max-width: 500px) {
-  #welcome-section #welcomeGrid #welcomeContainer {
-    padding-top: 80px; }
-    #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
-      margin-top: 80px;
-      padding: 0 30px; }
+@media only screen and (max-width: 1150px) { #aboutMe #aboutMeText h1 { font-size: 50px; }
+  #aboutMe #aboutMeText p { font-size: 26px; padding-right: 20px; } }
+@media only screen and (max-width: 940px) { #aboutMe { grid-template-columns: 1.2fr 1fr; }
+  #aboutMe #aboutMeText h1 { font-size: 50px; text-align: center; }
+  #aboutMe #aboutMeText p { font-size: 26px; text-align: center; }
+  #aboutMe #aboutMeText #aboutEducation { grid-template-columns: 1fr; text-align: center; } }
+@media only screen and (max-width: 750px) { #aboutMe { grid-template-columns: 1fr; }
+  #aboutMe img { width: 50%; min-width: 300px; margin: 0 auto; padding-top: 50px; }
+  #aboutMe #aboutMeText h1 { font-size: 55px; text-align: center; }
+  #aboutMe #aboutMeText p { font-size: 30px; text-align: center; } }
+@media only screen and (max-width: 650px) { #aboutMe { margin-top: 130px; } }
+@media only screen and (max-width: 440px) { #aboutMe { margin-top: 80px; }
+  #aboutMe #aboutMeText h1 { font-size: 40px; text-align: center; }
+  #aboutMe #aboutMeText p { font-size: 23px; text-align: center; } }
+#skills { margin-top: 100px; margin-bottom: 100px; text-align: center; }
+#skills h1 { color: #BBBE32; }
+#skills .skillSec { max-width: 700px; margin: 0 auto; padding: 20px 0; }
+#skills .skillSec h2 { font-size: 47px; font-family: "BungeeRegular"; padding: 10px; padding-left: 0; }
+#skills .skillSec h3 { font-size: 40px; word-spacing: 30px; line-height: 1.4; padding: 15px; }
+#skills .skillSec h3 span { word-spacing: 5px; }
 
-  .canvasDiv {
-    top: 80px; } }
-#aboutMe {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  align-items: center;
-  box-sizing: border-box; }
-  #aboutMe #aboutMeText {
-    padding-left: 20px; }
-    #aboutMe #aboutMeText h1 {
-      font-family: "BungeeRegular";
-      font-size: 50px;
-      padding: 25px;
-      padding-left: 0;
-      color: #126AB3; }
-    #aboutMe #aboutMeText h2 {
-      font-size: 30px;
-      padding: 15px;
-      padding-left: 0;
-      font-family: "RalewayBold"; }
-    #aboutMe #aboutMeText p {
-      font-family: "RalewayRegular";
-      font-size: 26px;
-      line-height: 1.5;
-      padding-right: 70px; }
-    #aboutMe #aboutMeText #aboutEducation {
-      display: grid;
-      grid-template-columns: 1fr 1fr; }
-      #aboutMe #aboutMeText #aboutEducation .educationContainer h2 {
-        padding-bottom: 0; }
-      #aboutMe #aboutMeText #aboutEducation .educationContainer p {
-        font-size: 20px;
-        padding: 10px;
-        padding-left: 0; }
-  #aboutMe img {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 20px; }
+@media only screen and (max-width: 440px) { #skills h1 { font-size: 50px; }
+  #skills .skillSec h2 { font-size: 40px; }
+  #skills .skillSec h3 { font-size: 30px; } }
+#projects { margin-top: 150px; margin: auto; }
+#projects h1 { color: #FF7974; padding-bottom: 50px; }
+#projects #projectDiv { margin: 0 auto; display: block; position: relative; }
+#projects #projectDiv #projectTiles { display: flex; flex-wrap: wrap; align-items: center; width: auto; }
+#projects #projectDiv #projectTiles .tile-link .project-tile { border: 1px solid #525252; border-radius: 26px; width: 384px; height: 384px; padding: 26px; display: grid; grid-template-columns: 1fr; align-items: end; box-shadow: 10px 10px #FF7974; margin: 12px; animation-name: projectOut; animation-duration: 0.5s; position: relative; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .gitButton { position: absolute; border: 1px solid #525252; border-radius: 10px; width: 50px; height: 50px; right: 15px; top: 15px; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .gitButton svg { fill: #FF7974; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle { font-family: "BungeeRegular"; font-size: 40px; line-height: 1.2; padding-bottom: 10px; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc { font-family: "RalewayRegular"; font-size: 26px; line-height: 1.33; }
+#projects #projectDiv #projectTiles .tile-link .project-tile:hover { animation-name: projectHover; animation-duration: 0.5s; animation-fill-mode: forwards; }
 
-@media only screen and (max-width: 1150px) {
-  #aboutMe #aboutMeText h1 {
-    font-size: 50px; }
-  #aboutMe #aboutMeText p {
-    font-size: 26px;
-    padding-right: 20px; } }
-@media only screen and (max-width: 940px) {
-  #aboutMe {
-    grid-template-columns: 1.2fr 1fr; }
-    #aboutMe #aboutMeText h1 {
-      font-size: 50px;
-      text-align: center; }
-    #aboutMe #aboutMeText p {
-      font-size: 26px;
-      text-align: center; }
-    #aboutMe #aboutMeText #aboutEducation {
-      grid-template-columns: 1fr;
-      text-align: center; } }
-@media only screen and (max-width: 750px) {
-  #aboutMe {
-    grid-template-columns: 1fr; }
-    #aboutMe img {
-      width: 50%;
-      min-width: 300px;
-      margin: 0 auto;
-      padding-top: 50px; }
-    #aboutMe #aboutMeText h1 {
-      font-size: 55px;
-      text-align: center; }
-    #aboutMe #aboutMeText p {
-      font-size: 30px;
-      text-align: center; } }
-@media only screen and (max-width: 650px) {
-  #aboutMe {
-    margin-top: 130px; } }
-@media only screen and (max-width: 440px) {
-  #aboutMe {
-    margin-top: 80px; }
-    #aboutMe #aboutMeText h1 {
-      font-size: 40px;
-      text-align: center; }
-    #aboutMe #aboutMeText p {
-      font-size: 23px;
-      text-align: center; } }
-#skills {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  text-align: center; }
-  #skills h1 {
-    color: #BBBE32; }
-  #skills .skillSec {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px 0; }
-    #skills .skillSec h2 {
-      font-size: 47px;
-      font-family: "BungeeRegular";
-      padding: 10px;
-      padding-left: 0; }
-    #skills .skillSec h3 {
-      font-size: 40px;
-      word-spacing: 30px;
-      line-height: 1.4;
-      padding: 15px; }
-      #skills .skillSec h3 span {
-        word-spacing: 5px; }
+@keyframes projectHover { from { margin: 12px; box-shadow: 10px 10px #FF7974; }
+  to { margin: 22px 0 0 24px; box-shadow: 0px 0px white; } }
+@keyframes projectOut { from { margin: 22px 0 0 24px; box-shadow: 0px 0px white; }
+  to { margin: 12px; box-shadow: 10px 10px #FF7974; } }
+@media only screen and (max-width: 1300px) { #projects { padding-right: 15px; }
+  #projects h1 { text-align: center; }
+  #projects #projectDiv #projectTiles { justify-content: center; }
+  #projects #projectDiv #projectTiles .tile-link .project-tile { width: 450px; height: 350px; } }
+@media only screen and (max-width: 980px) { #projects #projectDiv #projectTiles .tile-link .project-tile { width: 350px; height: 400px; } }
+@media only screen and (max-width: 778px) { #projects #projectDiv #projectTiles .tile-link .project-tile { width: 450px; height: 300px; } }
+@media only screen and (max-width: 518px) { #projects #projectDiv #projectTiles .tile-link .project-tile { width: 350px; height: 440px; } }
+@media only screen and (max-width: 400px) { #projects h1 { font-size: 50px; }
+  #projects #projectDiv #projectTiles .tile-link .project-tile { width: calc(100% - 20px); height: 340px; }
+  #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle { font-size: 32px; }
+  #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc { font-size: 22px; } }
+#contact { margin: 100px 0; }
+#contact h1 { color: #5B3A80; }
+#contact .contactGrid { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 30px; margin: 20px; }
+#contact .contactGrid .contactWay svg { max-width: 100px; fill: #5B3A80; display: inline-block; }
+#contact .contactGrid .contactWay h2 { position: relative; display: inline-block; top: -29px; left: 10px; z-index: 34534534; font-size: 40px; }
+#contact .contactGrid .contactWay h2 .contactLink:hover { color: #5B3A80; text-decoration: underline; }
 
-@media only screen and (max-width: 440px) {
-  #skills h1 {
-    font-size: 50px; }
-  #skills .skillSec h2 {
-    font-size: 40px; }
-  #skills .skillSec h3 {
-    font-size: 30px; } }
-#projects {
-  margin-top: 150px;
-  margin: auto; }
-  #projects h1 {
-    color: #FF7974;
-    padding-bottom: 50px; }
-  #projects #projectDiv {
-    margin: 0 auto;
-    display: block;
-    position: relative; }
-    #projects #projectDiv #projectTiles {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: auto; }
-      #projects #projectDiv #projectTiles .tile-link .project-tile {
-        border: 1px solid #525252;
-        border-radius: 26px;
-        width: 384px;
-        height: 384px;
-        padding: 26px;
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: end;
-        box-shadow: 10px 10px #FF7974;
-        margin: 12px;
-        animation-name: projectOut;
-        animation-duration: 0.5s;
-        position: relative; }
-        #projects #projectDiv #projectTiles .tile-link .project-tile .gitButton {
-          position: absolute;
-          border: 1px solid #525252;
-          border-radius: 10px;
-          width: 50px;
-          height: 50px;
-          right: 15px;
-          top: 15px; }
-          #projects #projectDiv #projectTiles .tile-link .project-tile .gitButton svg {
-            fill: #FF7974; }
-        #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle {
-          font-family: "BungeeRegular";
-          font-size: 40px;
-          line-height: 1.2;
-          padding-bottom: 10px; }
-        #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc {
-          font-family: "RalewayRegular";
-          font-size: 26px;
-          line-height: 1.33; }
-      #projects #projectDiv #projectTiles .tile-link .project-tile:hover {
-        animation-name: projectHover;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards; }
+@media only screen and (max-width: 1140px) { #contact { max-width: 600px; margin: 100px auto; }
+  #contact h1 { text-align: center; }
+  #contact .contactGrid { grid-template-columns: 1fr; } }
+@media only screen and (max-width: 600px) { #contact { max-width: 500px; }
+  #contact .contactGrid .contactWay svg { max-width: 80px; }
+  #contact .contactGrid .contactWay h2 { font-size: 30px; } }
+@media only screen and (max-width: 480px) { #contact { max-width: 400px; }
+  #contact h1 { font-size: 40px; }
+  #contact .contactGrid .contactWay svg { max-width: 35px; }
+  #contact .contactGrid .contactWay h2 { font-size: 22px; top: -9.5px; }
+  #contact .contactGrid .contactWay h2 a { font-size: 22px; top: -9.5px; } }
+@media only screen and (max-width: 325px) { #contact .contactGrid .contactWay svg { max-width: 35px; }
+  #contact .contactGrid .contactWay h2 { font-size: 18px; top: -9.5px; } }
+footer { width: 100%; height: 140px; background-color: #525252; }
+footer h3 { color: #EAEAEA; font-size: 25px; font-family: "BungeeHairline"; text-align: center; position: relative; top: 50%; transform: translateY(-50%); padding: 10px; }
 
-@keyframes projectHover {
-  from {
-    margin: 12px;
-    box-shadow: 10px 10px #FF7974; }
-  to {
-    margin: 22px 0 0 24px;
-    box-shadow: 0px 0px white; } }
-@keyframes projectOut {
-  from {
-    margin: 22px 0 0 24px;
-    box-shadow: 0px 0px white; }
-  to {
-    margin: 12px;
-    box-shadow: 10px 10px #FF7974; } }
-@media only screen and (max-width: 1300px) {
-  #projects {
-    padding-right: 15px; }
-    #projects h1 {
-      text-align: center; }
-    #projects #projectDiv #projectTiles {
-      justify-content: center; }
-      #projects #projectDiv #projectTiles .tile-link .project-tile {
-        width: 450px;
-        height: 350px; } }
-@media only screen and (max-width: 980px) {
-  #projects #projectDiv #projectTiles .tile-link .project-tile {
-    width: 350px;
-    height: 400px; } }
-@media only screen and (max-width: 778px) {
-  #projects #projectDiv #projectTiles .tile-link .project-tile {
-    width: 450px;
-    height: 300px; } }
-@media only screen and (max-width: 518px) {
-  #projects #projectDiv #projectTiles .tile-link .project-tile {
-    width: 350px;
-    height: 440px; } }
-@media only screen and (max-width: 400px) {
-  #projects h1 {
-    font-size: 50px; }
-  #projects #projectDiv #projectTiles .tile-link .project-tile {
-    width: calc(100% - 20px);
-    height: 340px; }
-    #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle {
-      font-size: 32px; }
-    #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc {
-      font-size: 22px; } }
-#contact {
-  margin: 100px 0; }
-  #contact h1 {
-    color: #5B3A80; }
-  #contact .contactGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    margin: 20px; }
-    #contact .contactGrid .contactWay svg {
-      max-width: 100px;
-      fill: #5B3A80;
-      display: inline-block; }
-    #contact .contactGrid .contactWay h2 {
-      position: relative;
-      display: inline-block;
-      top: -29px;
-      left: 10px;
-      z-index: 34534534;
-      font-size: 40px; }
-      #contact .contactGrid .contactWay h2 .contactLink:hover {
-        color: #5B3A80;
-        text-decoration: underline; }
+.anchor { display: block; position: relative; top: -100px; visibility: hidden; }
 
-@media only screen and (max-width: 1140px) {
-  #contact {
-    max-width: 600px;
-    margin: 100px auto; }
-    #contact h1 {
-      text-align: center; }
-    #contact .contactGrid {
-      grid-template-columns: 1fr; } }
-@media only screen and (max-width: 600px) {
-  #contact {
-    max-width: 500px; }
-    #contact .contactGrid .contactWay svg {
-      max-width: 80px; }
-    #contact .contactGrid .contactWay h2 {
-      font-size: 30px; } }
-@media only screen and (max-width: 480px) {
-  #contact {
-    max-width: 400px; }
-    #contact h1 {
-      font-size: 40px; }
-    #contact .contactGrid .contactWay svg {
-      max-width: 35px; }
-    #contact .contactGrid .contactWay h2 {
-      font-size: 22px;
-      top: -9.5px; }
-      #contact .contactGrid .contactWay h2 a {
-        font-size: 22px;
-        top: -9.5px; } }
-@media only screen and (max-width: 325px) {
-  #contact .contactGrid .contactWay svg {
-    max-width: 35px; }
-  #contact .contactGrid .contactWay h2 {
-    font-size: 18px;
-    top: -9.5px; } }
-footer {
-  width: 100%;
-  height: 140px;
-  background-color: #525252; }
-  footer h3 {
-    color: #EAEAEA;
-    font-size: 25px;
-    font-family: "BungeeHairline";
-    text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px; }
+#aboutAnchor { top: -130px; }
 
-.anchor {
-  display: block;
-  position: relative;
-  top: -100px;
-  visibility: hidden; }
+#skillsAnchor { top: -35px; }
 
-#aboutAnchor {
-  top: -130px; }
+#projectsAnchor { top: -130px; }
 
-#skillsAnchor {
-  top: -35px; }
-
-#projectsAnchor {
-  top: -130px; }
-
-#contactAnchor {
-  top: -1580px; }
+#contactAnchor { top: -1580px; }
 
 /*# sourceMappingURL=main.css.map */
