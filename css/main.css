@@ -105,7 +105,8 @@ a { text-decoration: none; }
 #projects #projectDiv #projectTiles { display: flex; flex-wrap: wrap; align-items: center; width: auto; }
 #projects #projectDiv #projectTiles .tile-link .project-tile { border: 1px solid #525252; border-radius: 26px; width: 384px; height: 384px; padding: 26px; display: grid; grid-template-columns: 1fr; align-items: end; box-shadow: 10px 10px #FF7974; margin: 12px; animation-name: projectOut; animation-duration: 0.5s; position: relative; }
 #projects #projectDiv #projectTiles .tile-link .project-tile .gitButton { position: absolute; border: 1px solid #525252; border-radius: 10px; width: 50px; height: 50px; right: 15px; top: 15px; }
-#projects #projectDiv #projectTiles .tile-link .project-tile .gitButton svg { fill: #FF7974; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .gitButton a { display: inline-block; }
+#projects #projectDiv #projectTiles .tile-link .project-tile .gitButton a img { fill: #FF7974; display: block; }
 #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectTitle { font-family: "BungeeRegular"; font-size: 40px; line-height: 1.2; padding-bottom: 10px; }
 #projects #projectDiv #projectTiles .tile-link .project-tile .projectText .projectDesc { font-family: "RalewayRegular"; font-size: 26px; line-height: 1.33; }
 #projects #projectDiv #projectTiles .tile-link .project-tile:hover { animation-name: projectHover; animation-duration: 0.5s; animation-fill-mode: forwards; }

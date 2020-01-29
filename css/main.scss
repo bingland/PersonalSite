@@ -546,9 +546,14 @@ a {
                         height: 50px;
                         right: 15px;
                         top: 15px;
-                        svg {
-                            fill: $pink;
+                        a {
+                            display: inline-block;
+                            img {
+                                fill: $pink;
+                                display: block;
+                            }
                         }
+                        
                     }
         
                     .projectText {
