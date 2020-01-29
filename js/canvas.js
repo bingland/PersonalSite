@@ -38,14 +38,14 @@ function adjustBalls(factor) {
     balls = canvas.width / 10
 }
 function adjustHeight() {
-    if (innerWidth < 650) {
-        console.log(canvasContainer.offsetHeight)
+    if (innerWidth <= 650) {
+        //console.log(canvasContainer.offsetHeight)
         //canvasContainer.style.height = '50%'
-        canvas.height = innerHeight/3
+        canvas.height = innerHeight/2 - 110
         balls = canvas.width / 20
     } else {
         //canvasContainer.style.height = '100%'
-        canvas.height = innerHeight
+        canvas.height = innerHeight - 110
     }
 }
 
