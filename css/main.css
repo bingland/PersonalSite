@@ -36,7 +36,7 @@ a { text-decoration: none; }
   #navbar .popupBar { display: block; } }
 @media only screen and (max-width: 650px) { #navbar ul { grid-template-columns: 1fr 70px; }
   #navbar ul a { justify-self: left; }
-  #navbar ul #hamburger { display: inline-block; fill: #525252; margin-right: 10px; }
+  #navbar ul #hamburger { display: inline-block; fill: #525252; margin-right: 5px; }
   #navbar .popupBar { display: none; } }
 @media only screen and (max-width: 500px) { #navbar { height: 80px; }
   #navbar ul { display: grid; grid-template-columns: 1fr 150px; grid-template-rows: 80px; justify-items: left; }
@@ -45,7 +45,7 @@ a { text-decoration: none; }
   #navbar ul #hamburger { display: block; width: 80px; padding: 10px; justify-self: right; fill: #525252; }
   #navbar .popupBar { display: none; }
   #navbar .popupBar ul { padding: 0; }
-  #navbar .popupBar ul li { width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.171); font-size: 32px; } }
+  #navbar .popupBar ul li { width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.171); font-size: 32px; padding: 20px; } }
 .canvasDiv { position: absolute; z-index: -99999; background-color: #58B4FF; width: 100%; height: calc(100% - 110px); top: 110px; }
 .canvasDiv canvas { position: absolute; width: 100%; height: 100%; opacity: 0.4; }
 

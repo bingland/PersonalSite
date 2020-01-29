@@ -72,6 +72,14 @@ nav li a:hover:before {
         display: none;
     }
 }
+@media only screen and (max-width: 370px) {
+    nav img {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+        
+    }
+}
 
 /* carousel */
 .carousel {
@@ -105,6 +113,20 @@ nav li a:hover:before {
 .carouselText a {
     color: white;
     font-style: italic;
+}
+@media only screen and (max-width: 450px) {
+    .carouselText {
+        padding: 10px;
+    }
+    .carouselText h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .carouselText h4 {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
 }
 
 /* news */
@@ -265,6 +287,13 @@ nav li a:hover:before {
     .applyBlock {
         height: 60vh;
     }
+}@media only screen and (max-width: 450px) {
+    .applyBlock h2 {
+        font-size: 50px;
+    }
+    .applyBlock a {
+        font-size: 35px;
+    }
 }
 
 /* info section */
@@ -307,6 +336,15 @@ nav li a:hover:before {
         padding: 20px 0;
     }
 }
+@media only screen and (max-width: 400px) {
+    .infoNumber {
+        font-size: 70px;
+    }
+    .infoText {
+        font-size: 30px;
+    }
+}
+
 
 
 /* quote area */
@@ -456,6 +494,11 @@ nav li a:hover:before {
     padding: 20px;
     padding-left: 40px;
     margin-top: 30px;
+}
+@media only screen and (max-width: 425px) {
+    .athleticsTitle {
+        font-size: 60px;
+    }
 }
 @media only screen and (max-width: 900px) {
     .athleticsArea {
