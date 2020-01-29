@@ -1,10 +1,15 @@
 import { randomIntFromRange, randomColor, distance, rotate, resolveCollision } from './utils.js'
 
+const canvasContainer = document.querySelector('.canvasDiv')
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 canvas.width = innerWidth
 canvas.height = innerHeight
+
+let balls = 100
+adjustBalls()
+adjustHeight()
 
 const mouse = {
     x: innerWidth / 2,
@@ -23,8 +28,26 @@ addEventListener('resize', () => {
     canvas.width = innerWidth
     canvas.height = innerHeight
 
+    adjustBalls()
+    adjustHeight()
+
     init()
 })
+
+function adjustBalls(factor) {
+    balls = canvas.width / 10
+}
+function adjustHeight() {
+    if (innerWidth <= 650) {
+        //console.log(canvasContainer.offsetHeight)
+        //canvasContainer.style.height = '50%'
+        canvas.height = innerHeight/2 - 110
+        balls = canvas.width / 20
+    } else {
+        //canvasContainer.style.height = '100%'
+        canvas.height = innerHeight - 110
+    }
+}
 
 // Particles
 function Particle(x, y, radius, color) {
@@ -85,7 +108,7 @@ let particles
 function init() {
     particles = []
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < balls; i++) {
         const radius = 4.5
         let x = randomIntFromRange(radius, canvas.width - radius)
         let y = randomIntFromRange(radius, canvas.height - radius)

@@ -15,11 +15,20 @@
         <div class="wrapper">
             <ul>
                 <a href="#"><img id="logo" src="img/logo2alt.svg"></a>
-                <li><a href="#aboutMe">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#aboutAnchor">About</a></li>
+                <li><a href="#skillsAnchor">Skills</a></li>
+                <li><a href="#projectsAnchor">Projects</a></li>
+                <li><a href="#contactsAnchor">Contact</a></li>
+                <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"/></svg>
             </ul>
+            <div class="popupBar">
+                <ul>
+                    <li><a href="#aboutAnchor" class="popupButton">About</a></li>
+                    <li><a href="#skillsAnchor" class="popupButton">Skills</a></li>
+                    <li><a href="#projectsAnchor" class="popupButton">Projects</a></li>
+                    <li><a href="#contactsAnchor" class="popupButton">Contact</a></li>
+                </ul>
+            </div>
         </div>
         
     </nav>
@@ -37,10 +46,11 @@
     </section>
     
     <div class="wrapper">
+        <a class="anchor" id="aboutAnchor"></a>
         <section id="aboutMe">
             <div id="aboutMeText">
                 <h1>About Me</h1>
-                <p>Hey there! My name is Brayden England. I am currently a student at Utah Valley University, and an aspiring Web Developer. It’s currently my 4th year of University, and my first at UVU. I spent 3 years at SUU, where I graduated with an Associate’s Degree and a Music Minor.</p>
+                <p>Hey there! My name is Brayden England. I am currently a student at Utah Valley University, and a Web Developer. It’s currently my 4th year of University, and my first at UVU. I spent 3 years at SUU, where I graduated with an Associate’s Degree and a Music Minor. I am planning to graduate from UVU in 2021.</p>
                 <h1>Education</h1>
                 <div id="aboutEducation">
                     <div class="educationContainer">
@@ -56,6 +66,7 @@
             <img src="img/me2.jpg">
         </section>
 
+        <a class="anchor" id="skillsAnchor"></a>
         <section id="skills">
             <h1>Skills</h1>
             <div class="skillSec">
@@ -64,7 +75,7 @@
             </div>
             <div class="skillSec">
                 <h2>Back End</h2>
-                <h3>Node.js Java PHP</h3>
+                <h3>Node.js Java PHP mySQL</h3>
             </div>
             <div class="skillSec">
                 <h2>UI / UX</h2>
@@ -72,45 +83,51 @@
             </div>
         </section>
 
+        <a class="anchor" id="projectsAnchor"></a>
         <section id="projects">
             <h1>Projects</h1>
-            <div id="projectTiles">
-                <a class="tile-link" href="final/index.html">
-                    <div class="project-tile">
-                        <div class="projectText">
-                            <h2 class="projectTitle">SpaceX Launch Search</h2>
-                            <p class="projectDesc">Final for DGM 1600; uses the SpaceX API to display previous launches done by Space X.</p>
+            <div id="projectDiv">
+                <div id="projectTiles">
+                    <a class="tile-link" href="final/index.html">
+                        <div class="project-tile">
+                            <div class="projectText">
+                                <h2 class="projectTitle">SpaceX Launch Search</h2>
+                                <p class="projectDesc">Final for DGM 1600; uses the SpaceX API to display previous launches done by Space X.</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a class="tile-link" href="starwarsAPI/index.html">
-                    <div class="project-tile">
-                        <div class="projectText">
-                            <h2 class="projectTitle">Star wars API</h2>
-                            <p class="projectDesc">Assignment for DGM 1600 that uses a Star Wars Planets API, with a search bar and parameters.</p>
+                    </a>
+                    <a class="tile-link" href="FinalProjectGLU/index.html">
+                        <div class="project-tile">
+                            <div class="projectText">
+                                <h2 class="projectTitle">Generic Looking University</h2>
+                                <p class="projectDesc">A Website for a Generic Looking University. Made with HTML and CSS only. Made in Spring 2019.</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a class="tile-link" href="cards/index.html">
-                    <div class="project-tile">
-                        <div class="projectText">
-                        <h2 class="projectTitle">Studio Ghibli Characters</h2>
-                        <p class="projectDesc">Assignment for DGM 1600; Displays characters form Studio Ghibli movies using the Studio Ghibli Api.</p>
+                    </a>
+                    <a class="tile-link" href="collisionDetection/canvas-boilerplate/src/index.html">
+                        <div class="project-tile">
+                            <div class="projectText">
+                                <h2 class="projectTitle"> Bouncing Balls in Canvas</h2>
+                                <p class="projectDesc">Collision Detection in HTML5 Canvas, made with JavaScript. Changes color based on hover.</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a class="tile-link" href="cards/index.html">
-                    <div class="project-tile">
-                        <div class="projectText">
-                        <h2 class="projectTitle">Placeholder</h2>
-                        <p class="projectDesc">Assignment for DGM 1600; Displays characters form Studio Ghibli movies using the Studio Ghibli Api.</p>
+                    </a>
+                    <a class="tile-link" href="https://bacon-digest.herokuapp.com/">
+                        <div class="project-tile">
+                            <div class="projectText">
+                                <h2 class="projectTitle">Bacon Digest</h2>
+                                <p class="projectDesc">School project for IS 2000 about Bacon. Deployed with Heroku. Made in Fall 2018.</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                    
+                </div>
             </div>
+            
         </section>
 
         <div id="contact">
+            <a class="anchor" id="contactsAnchor"></a>
             <h1>Contact</h1>
             <div class="contactGrid">
                 <div class="contactWay">
@@ -119,11 +136,11 @@
                 </div>
                 <div class="contactWay">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9 1.4.3 2.6.4 3.8.4 8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1-8.4 1.9-15.9 2.7-22.6 2.7-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1 10.5 0 20-3.4 25.6-6 2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8 0 0 1.6-.5 5-.5 8.1 0 26.4 3.1 56.6 24.1 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 30.2-21 48.5-24.1 56.6-24.1 3.4 0 5 .5 5 .5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5 1.2 0 2.6-.1 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"/></svg>
-                    <h2><a href="https://github.com/bingland">Github</a></h2>
+                    <h2><a class="contactLink" href="https://github.com/bingland">Github</a></h2>
                 </div>
                 <div class="contactWay">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"/></svg>
-                    <h2><a href="https://www.linkedin.com/in/brayden-england-0835b8159/">LinkedIn</a></h2>
+                    <h2><a class="contactLink" href="https://www.linkedin.com/in/brayden-england-0835b8159/">LinkedIn</a></h2>
                 </div>
                 <div class="contactWay">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M312 155h91c2.8 0 5-2.2 5-5 0-8.9-3.9-17.3-10.7-22.9L321 63.5c-5.8-4.8-13-7.4-20.6-7.4-4.1 0-7.4 3.3-7.4 7.4V136c0 10.5 8.5 19 19 19z"/><path d="M267 136V56H136c-17.6 0-32 14.4-32 32v336c0 17.6 14.4 32 32 32h240c17.6 0 32-14.4 32-32V181h-96c-24.8 0-45-20.2-45-45z"/></svg>
@@ -136,9 +153,10 @@
     </div>
 
     <footer>
-        <h3>©2019 Brayden England</h3>
+        <h3>©2020 Brayden England</h3>
     </footer>
 
     <script type="module" src="js/canvas.js"></script>
+    <script type="module" src="js/hamburger.js"></script>
 </body>
 </html>

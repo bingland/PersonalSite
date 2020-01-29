@@ -14,6 +14,12 @@ $purple: #5B3A80;
     src: url("../fonts/bungee-regular-webfont.woff") format("woff"),
     url("../fonts/bungee-regular-webfont.ttf") format("truetype");
 }
+//bungee hairline
+@font-face {
+    font-family: "BungeeHairline";
+    src: url("../fonts/bungee-hairline.woff") format("woff"),
+    url("../fonts/bungee-hairline.otf") format("truetype");
+}
 //roboto font
 @font-face {
     font-family: "RobotoRegular";
@@ -72,60 +78,163 @@ a {
     position: fixed;
     width: 100%;
     height: 110px;
-    overflow: hidden;
     background: white;
     font-family: "BungeeRegular";
     box-shadow: 0px 3px 30px rgba(0,0,0,0.2);
+    z-index: 999999999;
     
     ul {
         display: grid;
         width: 100%;
         grid-template-rows: 110px;
-        grid-template-columns: repeat(5, 1fr);
-        justify-content: center;
+        grid-template-columns: 0.9fr 145px 0.8fr 0.8fr 0.8fr;
+        justify-content: end;
         align-items: center;
         text-align: center;
-
-        #logo {
-            width: 100%;
-            max-height: 100px;
-            padding: 10px;
+        grid-gap: 15px;
+        padding-right: 5px;
+        a {
+            #logo {
+                width: 100%;
+                max-height: 100px;
+                padding: 7px;
+                justify-self: start;
+            }
         }
         li {
             font-size: 40px;
+            font-family: "BungeeHairline";
+            font-weight: bolder;
+
             a:hover {
                 color: $darkblue;
-                text-decoration: underline;
+            }
+        }
+
+        #hamburger {
+            display: none;
+        }
+    }
+
+    .popupBar {
+        
+        width: 100%;
+        background-color: $darkblue;
+        position: fixed;
+        display: none;
+        box-shadow: 0px 3px 30px rgba(0,0,0,0.2);
+
+        ul {
+            color: white;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            
+            
+            li {
+                width: auto;
+                display: block;
+                padding: 6px 10px;
+                font-size: 30px;
+                
+                a {
+                    color: white;
+                }
+            }
+            li:hover {
+                background-color: darken($lightblue, 20%);
             }
         }
     }
 }
 //navbar media query
-@media only screen and (max-width: 1300px) {
-    /*
-    #navbar ul {
-        grid-template-columns: 20fr 20fr 150px 13fr 27fr;
-    }
-    */
-}
-@media only screen and (max-width: 1100px) {
-    /*
-    #navbar ul {
-        grid-template-columns: 200px 200px 180px 130px 270px;
-        grid-template-columns: 20fr 20fr 150px 13fr 27fr;
-        li {
-            font-size: 35px;
+@media only screen and (max-width: 900px) {
+    #navbar {
+        ul {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            li {
+                display: none;
+            }
+            a {
+                #logo {
+                    margin: 0;
+                    padding: 10px;
+                    padding-left: 0px;
+                }
+            }
+        }
+        .popupBar {
+            display: block;
         }
     }
-    */
 }
-@media only screen and (max-width: 800px) {
-    #navbar ul {
-        grid-template-columns: 1fr;
-        li {
+@media only screen and (max-width: 650px) {
+    #navbar {
+        ul {
+            grid-template-columns: 1fr 70px;
+            a {
+                justify-self: left;
+            }
+
+            #hamburger {
+                display: inline-block;
+                fill: $grey;
+                margin-right: 10px;
+            }
+        }
+        .popupBar {
             display: none;
         }
     }
+} 
+@media only screen and (max-width: 500px) {
+    #navbar {
+        height: 80px;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: 80px;
+            justify-items: left;
+            li {
+                display: none;
+            }
+            a{
+                #logo {
+                    width: auto;
+                    height: 100%;
+                    margin: 0;
+                    margin-left: 10px;
+                    padding: 23px;
+                    padding-left: 15px;
+                }
+            }
+            #hamburger {
+                display: block;
+                width: 80px;
+                padding: 10px;
+                justify-self: right;
+                fill: $grey;
+            }
+        }
+        .popupBar {
+            display: none;
+    
+            ul {
+                padding: 0;
+                li {
+                    width: 100%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
 }
 
 //canvas
@@ -136,12 +245,13 @@ a {
     width: 100%;
     height: calc(100% - 110px);
     top: 110px;
-}
-canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
+
+    canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
 }
 
 //welcome section
@@ -174,8 +284,52 @@ canvas {
     }
 }
 //welcome section media quieries
-@media only screen and (max-height: 800px) {
-    
+@media only screen and (max-width: 1050px) {
+    #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+        padding: 50px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #welcome-section {
+        height: 300px;
+
+        #welcomeGrid {
+            height: calc(400px - 110px);
+            #welcomeContainer {
+                height: calc(400px - 110px);
+                #welcomeText {
+                    height: 100%;
+                    padding: 5px;
+                    margin-top: 110px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .canvasDiv {
+        height: calc(400px - 110px);;
+        canvas {
+            height: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    #welcome-section {
+        #welcomeGrid {
+            #welcomeContainer {
+                padding-top: 80px;
+                #welcomeText {
+                    margin-top: 80px;
+                    padding: 0 30px;
+                }
+            }
+        }
+    } 
+    .canvasDiv {
+        top: 80px;
+    }
 }
 
 
@@ -235,29 +389,31 @@ canvas {
     #aboutMe {
         #aboutMeText {
             h1 {
-                font-size: 60px;
+                font-size: 50px;
             }
             p {
-                font-size: 35px;
+                font-size: 26px;
+                padding-right: 20px;
             }
         }
     }
 }
 @media only screen and (max-width: 940px) {
     #aboutMe {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.2fr 1fr;
         #aboutMeText {
             h1 {
-                font-size: 55px;
+                font-size: 50px;
                 text-align: center;
             }
             p {
-                font-size: 30px;
+                font-size: 26px;
                 text-align: center;
             }
-        }
-        #aboutEducation {
-            grid-template-columns: 1fr;
+            #aboutEducation {
+                grid-template-columns: 1fr;
+                text-align: center; 
+            }  
         }
     }
 }
@@ -283,10 +439,29 @@ canvas {
         }
     }
 }
+@media only screen and (max-width: 650px) {
+    #aboutMe { margin-top: 130px; }
+}
+@media only screen and (max-width: 440px) {
+    #aboutMe {
+        margin-top: 80px;
+        #aboutMeText {
+            h1 {
+                font-size: 40px;
+                text-align: center;
+            }
+            p {
+                font-size: 23px;
+                text-align: center;
+            }
+        }
+    }
+}
 
 //skills
 #skills {
     margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
     h1 {
         color: $newyellow;
@@ -297,18 +472,29 @@ canvas {
         margin: 0 auto;
         padding: 20px 0;
         h2 {
-            font-size: 50px;
+            font-size: 47px;
             font-family: "BungeeRegular";
             padding: 10px;
             padding-left: 0;
         }
         h3 {
-            font-size: 50px;
+            font-size: 40px;
             word-spacing: 30px;
             line-height: 1.4;
+            padding: 15px;
             span {
                 word-spacing: 5px;
             }
+        }
+    }
+}
+@media only screen and (max-width: 440px) {
+    #skills {
+        h1 { font-size: 50px; }
+
+        .skillSec {
+            h2 { font-size: 40px; }
+            h3 { font-size: 30px; }
         }
     }
 }
@@ -316,55 +502,64 @@ canvas {
 //projects
 #projects {
     margin-top: 150px;
-    width: 100%;
+    margin: auto;
 
     h1 {
         color: $pink;
         padding-bottom: 50px;
     }
-
-    #projectTiles {
-        display: flex;
-        flex-wrap: wrap;
+    #projectDiv {
         margin: 0 auto;
-        //grid-gap: 24px;
-        //grid-template-columns: 1fr 1fr 1fr;
-    }
-    a { 
-        .project-tile {
-            border: 1px solid $grey;
-            border-radius: 26px;
-            width: 384px;
-            height: 384px;
-            padding: 26px;
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: end;
-            box-shadow: 10px 10px $pink;
-            margin: 12px;
-            animation-name: projectOut;
-            animation-duration: 0.5s;
+        display: block;
+        position: relative;
+        
+        #projectTiles {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: auto;
+            //justify-content: center;
+            //grid-gap: 24px;
+            //grid-template-columns: 1fr 1fr 1fr;
 
-            .projectText {
-                .projectTitle {
-                    font-family: "BungeeRegular";
-                    font-size: 40px;
-                    line-height: 1.2;
-                    padding-bottom: 10px;
+            .tile-link { 
+                .project-tile {
+                    border: 1px solid $grey;
+                    border-radius: 26px;
+                    width: 384px;
+                    height: 384px;
+                    padding: 26px;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: end;
+                    box-shadow: 10px 10px $pink;
+                    margin: 12px;
+                    animation-name: projectOut;
+                    animation-duration: 0.5s;
+        
+                    .projectText {
+                        .projectTitle {
+                            font-family: "BungeeRegular";
+                            font-size: 40px;
+                            line-height: 1.2;
+                            padding-bottom: 10px;
+                        }
+                        .projectDesc {
+                            font-family: "RalewayRegular";
+                            font-size: 26px;
+                            line-height: 1.33;
+                        }
+                    }
                 }
-                .projectDesc {
-                    font-family: "RalewayRegular";
-                    font-size: 26px;
-                    line-height: 1.33;
+                .project-tile:hover {
+                    animation-name: projectHover;
+                    animation-duration: 0.5s;
+                    animation-fill-mode: forwards;
                 }
             }
         }
-        .project-tile:hover {
-            animation-name: projectHover;
-            animation-duration: 0.5s;
-            animation-fill-mode: forwards;
-        }
     }
+    
 }
 
 @keyframes projectHover {
@@ -379,14 +574,14 @@ canvas {
 //projects media queries
 @media only screen and (max-width: 1300px) {
     #projects {
-        padding-right: 20px;
+        padding-right: 15px;
 
         h1 {
             text-align: center;
         }
-        #projectTiles {
-            justify-items: center;
-            .project-tile {
+        #projectDiv #projectTiles {
+            justify-content: center;
+            .tile-link .project-tile {
                 width: 450px;
                 height: 350px;
             }
@@ -395,8 +590,8 @@ canvas {
 }
 @media only screen and (max-width: 980px) {
     #projects {
-        #projectTiles {
-            .project-tile {
+        #projectDiv #projectTiles {
+            .tile-link .project-tile {
                 width: 350px;
                 height: 400px;
             }
@@ -405,8 +600,8 @@ canvas {
 }
 @media only screen and (max-width: 778px) {
     #projects {
-        #projectTiles {
-            .project-tile {
+        #projectDiv #projectTiles {
+            .tile-link .project-tile {
                 width: 450px;
                 height: 300px;
             }
@@ -415,23 +610,35 @@ canvas {
 }
 @media only screen and (max-width: 518px) {
     #projects {
-        #projectTiles {
-            .project-tile {
+        #projectDiv #projectTiles {
+            .tile-link .project-tile {
                 width: 350px;
                 height: 440px;
             }
         }
     }
 }
-@media only screen and (max-width: 422px) {
+@media only screen and (max-width: 400px) {
     #projects {
         h1 {
             font-size: 50px;
         }
-        #projectTiles {
-            .project-tile {
-                width: 320px;
-                height: 440px;
+        #projectDiv {
+            #projectTiles {
+                .tile-link {
+                    .project-tile {
+                        width: calc(100% - 20px);
+                        height: 340px;
+                        .projectText {
+                            .projectTitle {
+                                font-size: 32px;
+                            }
+                            .projectDesc {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -457,15 +664,17 @@ canvas {
                 display: inline-block;
             }
             h2 {
-                font-size: 40px;
                 position: relative;
                 display: inline-block;
                 top: -29px;
                 left: 10px;
-            }
-            a:hover {
-                color: $darkblue;
-                text-decoration: underline;
+                z-index: 34534534;
+                font-size: 40px;
+
+                .contactLink:hover {
+                    color: $purple;
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -506,11 +715,30 @@ canvas {
         .contactGrid {
             .contactWay {
                 svg {
-                    max-width: 33px;
+                    max-width: 35px;
+                }
+                h2 {
+                    font-size: 22px;
+                    top: -9.5px;
+                    a {
+                        font-size: 22px;
+                        top: -9.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 325px) {
+    #contact {
+        .contactGrid {
+            .contactWay {
+                svg {
+                    max-width: 35px;
                 }
                 h2 {
                     font-size: 18px;
-                    top: -13px;
+                    top: -9.5px;
                 }
             }
         }
@@ -526,15 +754,25 @@ footer {
     h3 {
         color: $smokywhite;
         font-size: 25px;
-        font-family: "RalewayRegular";
+        font-family: "BungeeHairline";
         text-align: center;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        padding: 10px;
     }
 }
 
-
+.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+#aboutAnchor { top: -130px; }
+#skillsAnchor { top: -35px; }
+#projectsAnchor { top: -130px; }
+#contactAnchor { top: -1580px; }
 
 
 
