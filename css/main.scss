@@ -687,19 +687,22 @@ a {
     .contactGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 110px;
         grid-gap: 30px;
         margin: 20px;
 
         .contactWay {
+            height: 100%;
             svg {
-                max-width: 100px;
+                max-width: 80px;
+                max-height: 80px;
                 fill: $purple;
                 display: inline-block;
             }
             h2 {
                 position: relative;
                 display: inline-block;
-                top: -29px;
+                top: -25px;
                 left: 10px;
                 z-index: 34534534;
                 font-size: 40px;
@@ -728,6 +731,8 @@ a {
     #contact {
         max-width: 500px;
         .contactGrid {
+            grid-auto-rows: 85px;
+
             .contactWay {
                 svg {
                     max-width: 80px;
@@ -746,9 +751,12 @@ a {
             font-size: 40px;
         }
         .contactGrid {
+            grid-auto-rows: 40px;
+
             .contactWay {
                 svg {
                     max-width: 35px;
+                    max-height: 35px;
                 }
                 h2 {
                     font-size: 22px;
