@@ -1,0 +1,165 @@
+//nav
+#navbar {
+    top:0;
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    background: white;
+    font-family: "BungeeRegular";
+    box-shadow: 0px 3px 30px rgba(0,0,0,0.2);
+    z-index: 999999999;
+    
+    ul {
+        display: grid;
+        width: 100%;
+        grid-template-rows: 110px;
+        grid-template-columns: 0.9fr 145px 0.8fr 0.8fr 0.8fr;
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+        grid-gap: 15px;
+        padding-right: 5px;
+        a {
+            #logo {
+                width: 100%;
+                max-height: 100px;
+                padding: 7px;
+                justify-self: start;
+            }
+        }
+        li {
+            font-size: 40px;
+            font-family: "BungeeHairline";
+            font-weight: bolder;
+
+            a:hover {
+                color: $darkblue;
+            }
+        }
+
+        #hamburger {
+            display: none;
+        }
+    }
+
+    .popupBar {
+        
+        width: 100%;
+        background-color: $darkblue;
+        position: fixed;
+        display: none;
+        box-shadow: 0px 3px 30px rgba(0,0,0,0.2);
+
+        ul {
+            color: white;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            
+            
+            li {
+                width: auto;
+                display: block;
+                padding: 6px 10px;
+                font-size: 30px;
+                
+                a {
+                    color: white;
+                }
+            }
+            li:hover {
+                background-color: darken($lightblue, 20%);
+            }
+        }
+    }
+}
+//navbar media query
+@media only screen and (max-width: 900px) {
+    #navbar {
+        ul {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            li {
+                display: none;
+            }
+            a {
+                #logo {
+                    margin: 0;
+                    padding: 10px;
+                    padding-left: 0px;
+                }
+            }
+        }
+        .popupBar {
+            display: block;
+        }
+    }
+}
+@media only screen and (max-width: 650px) {
+    #navbar {
+        ul {
+            grid-template-columns: 1fr 70px;
+            a {
+                justify-self: left;
+            }
+
+            #hamburger {
+                display: inline-block;
+                fill: $grey;
+                margin-right: 5px;
+            }
+        }
+        .popupBar {
+            display: none;
+        }
+    }
+} 
+@media only screen and (max-width: 500px) {
+    #navbar {
+        height: 80px;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: 80px;
+            justify-items: left;
+            li {
+                display: none;
+            }
+            a{
+                #logo {
+                    width: auto;
+                    height: 100%;
+                    margin: 0;
+                    margin-left: 10px;
+                    padding: 23px;
+                    padding-left: 15px;
+                }
+            }
+            #hamburger {
+                display: block;
+                width: 80px;
+                padding: 10px;
+                justify-self: right;
+                fill: $grey;
+            }
+        }
+        .popupBar {
+            display: none;
+    
+            ul {
+                padding: 0;
+                li {
+                    width: 100%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+                    font-size: 32px;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+}

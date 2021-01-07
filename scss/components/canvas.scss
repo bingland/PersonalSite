@@ -1,0 +1,94 @@
+//canvas
+.canvasDiv {
+    position:absolute;
+    z-index: -99999;
+    background-color: $lightblue;
+    width: 100%;
+    height: calc(100% - 110px);
+    top: 110px;
+
+    canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+}
+
+//welcome section
+#welcome-section {
+    height: 100vh;
+    text-align: center;
+
+    #welcomeGrid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        #welcomeContainer {
+            width: 100%;
+            height: calc(100vh - 110px);
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            padding-top: 110px;
+
+            #welcomeText {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                max-width: 1000px;
+            }
+        }
+    }
+}
+//welcome section media quieries
+@media only screen and (max-width: 1050px) {
+    #welcome-section #welcomeGrid #welcomeContainer #welcomeText {
+        padding: 50px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #welcome-section {
+        height: 300px;
+
+        #welcomeGrid {
+            height: calc(400px - 110px);
+            #welcomeContainer {
+                height: calc(400px - 110px);
+                #welcomeText {
+                    height: 100%;
+                    padding: 5px;
+                    margin-top: 110px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .canvasDiv {
+        height: calc(400px - 110px);;
+        canvas {
+            height: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    #welcome-section {
+        #welcomeGrid {
+            #welcomeContainer {
+                padding-top: 80px;
+                #welcomeText {
+                    margin-top: 80px;
+                    padding: 0 30px;
+                }
+            }
+        }
+    } 
+    .canvasDiv {
+        top: 80px;
+    }
+}

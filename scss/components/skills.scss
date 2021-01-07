@@ -1,0 +1,41 @@
+
+//skills
+#skills {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    h1 {
+        color: $newyellow;
+    }
+
+    .skillSec {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        h2 {
+            font-size: 47px;
+            font-family: "BungeeRegular";
+            padding: 10px;
+            padding-left: 0;
+        }
+        h3 {
+            font-size: 40px;
+            word-spacing: 30px;
+            line-height: 1.4;
+            padding: 15px;
+            span {
+                word-spacing: 5px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 440px) {
+    #skills {
+        h1 { font-size: 50px; }
+
+        .skillSec {
+            h2 { font-size: 40px; }
+            h3 { font-size: 30px; }
+        }
+    }
+}

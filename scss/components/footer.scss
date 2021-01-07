@@ -1,0 +1,16 @@
+footer {
+    width: 100%;
+    height: 140px;
+    background-color: $grey;
+
+    h3 {
+        color: $smokywhite;
+        font-size: 25px;
+        font-family: "BungeeHairline";
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+    }
+}

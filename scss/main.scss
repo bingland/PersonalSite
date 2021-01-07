@@ -1,0 +1,107 @@
+$pink: #FF7974;
+$grey: #525252;
+$darkblue: #126AB3;
+$lightblue: #58B4FF;
+$smokywhite: #EAEAEA;
+$limegreen: #C6CC33;
+$darklime: #AEB336;
+$newyellow: #BBBE32;
+$purple: #5B3A80;
+
+@import "components/aboutme";
+@import "components/canvas";
+@import "components/contact";
+@import "components/footer";
+@import "components/navbar";
+@import "components/projects";
+@import "components/skills";
+
+//bungee font
+@font-face {
+    font-family: "BungeeRegular";
+    src: url("../fonts/bungee-regular-webfont.woff") format("woff"),
+    url("../fonts/bungee-regular-webfont.ttf") format("truetype");
+}
+//bungee hairline
+@font-face {
+    font-family: "BungeeHairline";
+    src: url("../fonts/bungee-hairline.woff") format("woff"),
+    url("../fonts/bungee-hairline.otf") format("truetype");
+}
+//roboto font
+@font-face {
+    font-family: "RobotoRegular";
+    src: url("../fonts/roboto-regular-webfont.woff") format("woff"),
+    url("../fonts/roboto-regular-webfont.ttf") format("truetype");
+}
+//raleway font regular 
+@font-face {
+    font-family: "RalewayRegular";
+    src: url("../fonts/Raleway-Regular.woff") format("woff"),
+    url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+//raleway font bold 
+@font-face {
+    font-family: "RalewayBold";
+    src: url("../fonts/Raleway-Bold.woff") format("woff"),
+    url("../fonts/Raleway-Bold.ttf") format("truetype");
+}
+
+
+//global
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: "RalewayRegular";
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+* {
+    color: $grey;
+}
+h1 {
+    font-family: "BungeeRegular";
+    font-size: 80px;
+    padding: 25px;
+}
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 65px;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+// anchors
+.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+#aboutAnchor { top: -130px; }
+#skillsAnchor { top: -35px; }
+#projectsAnchor { top: -130px; }
+#contactAnchor { top: -1580px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
